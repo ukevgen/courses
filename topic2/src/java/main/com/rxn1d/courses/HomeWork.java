@@ -8,6 +8,20 @@ package com.rxn1d.courses;
 public class HomeWork {
 
     /**
+     * Метод должен вернуть решение квадратического уравнения.
+     * <p>Например:
+     * Найти решение уравнение вида 5x^2 + 2x + 11
+     *
+     * @param a коэфициент для x^2
+     * @param b коэфициент x
+     * @param c константа
+     * @return решение уравнения
+     */
+    public double solveEquasion(double a, double b, double c) {
+        return 1.0;
+    }
+
+    /**
      * Метод должен вернуть минимальное число
      * из заданного массива.
      * <p>Например:

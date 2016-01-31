@@ -7,6 +7,7 @@ package com.rxn1d.courses;
  */
 public class HomeWorkTest {
     private HomeWork homeWork;
+    private int[][] coeficients;
     private int[][] intArrays;
     private double[][] doubleArrays;
     private short[][] shortArrays;
