@@ -8,11 +8,11 @@ import java.util.Random;
  * @author Ievgen Tararaka
  */
 public class Constants {
-    private static Map<Integer, int[]> coefficientsMap = new HashMap<Integer, int[]>();
-    private static Map<Integer, int[]> minArrayMap = new HashMap<Integer, int[]>();
-    private static Map<Double, double[]> maxArrayMap = new HashMap<Double, double[]>();
-    private static Map<Short, short[]> averageArrayMap = new HashMap<Short, short[]>();
-    private static Map<char[], char[]> reverseArrayMap = new HashMap<char[], char[]>();
+    public static Map<Integer, int[]> coefficientsMap = new HashMap<Integer, int[]>();
+    public static Map<Integer, int[]> minArrayMap = new HashMap<Integer, int[]>();
+    public static Map<Double, double[]> maxArrayMap = new HashMap<Double, double[]>();
+    public static Map<Short, short[]> averageArrayMap = new HashMap<Short, short[]>();
+    public static Map<char[], char[]> reverseArrayMap = new HashMap<char[], char[]>();
 
     static {
         int[][] coefficients = new int[][]{
@@ -65,8 +65,16 @@ public class Constants {
         reverseArrayMap.put(new char[]{'l', 'e', 'v', 'e', 'l'}, reverseArray[2]);
     }
 
-    public Object[] getRandom() {
+    public static <T, V> Map.Entry<T, V> getRandomFrom(Map<T, V> map) {
         Random r = new Random();
-        r.nextInt()
+        int random = r.nextInt(map.entrySet().size());
+        int i = 0;
+        for (Map.Entry<T, V> entry : map.entrySet()) {
+            i++;
+            if (i == random) {
+                return entry;
+            }
+        }
+        return map.entrySet().iterator().next();
     }
 }
