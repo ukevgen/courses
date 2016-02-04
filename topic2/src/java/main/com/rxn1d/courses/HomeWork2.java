@@ -5,7 +5,7 @@ package com.rxn1d.courses;
  *
  * @author Ievgen Tararaka
  */
-public class HomeWork {
+public class HomeWork2 {
 
     /**
      * Метод должен вернуть решение квадратического уравнения.

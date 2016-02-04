@@ -1,6 +1,6 @@
 ## Домашнее задание №2
 
-### Реализовать простенький алгоритм
+### Реализовать простой алгоритм
  * Найти решение квадратичного уравнения
 
 ### Алгоритм с использованием циклов
@@ -8,5 +8,5 @@
  * Подсчитать среднее значение элементов в массиве (с помощью операторы цикла while)
  * Перевернуть массив (с помощью оператора цикла do-while)
 
-### Почитать про code-conventions
- * [Ссылка](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
+### Почитать про code conventions
+ * [Java Code Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)

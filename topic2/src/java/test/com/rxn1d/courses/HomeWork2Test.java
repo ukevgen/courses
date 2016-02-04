@@ -15,22 +15,22 @@ import static org.junit.Assert.assertTrue;
  * @author Ievgen Tararaka
  */
 @RunWith(Parameterized.class)
-public class HomeWorkTest {
+public class HomeWork2Test {
     private ValueToArrayPair<Integer, Integer> coefficientsEntry;
     private ValueToArrayPair<Integer, Integer> minArrayEntry;
     private ValueToArrayPair<Double, Double> maxArrayEntry;
     private ValueToArrayPair<Short, Short> averageArrayEntry;
     private ValueToArrayPair<char[], Character> reverseArrayEntry;
-    private HomeWork homeWork;
+    private HomeWork2 homeWork;
 
-    public HomeWorkTest(ValueToArrayPair<Integer, Integer> coefficientsEntry, ValueToArrayPair<Integer, Integer> minArrayEntry, ValueToArrayPair<Double, Double> maxArrayEntry,
-                        ValueToArrayPair<Short, Short> averageArrayEntry, ValueToArrayPair<char[], Character> reverseArrayEntry) {
+    public HomeWork2Test(ValueToArrayPair<Integer, Integer> coefficientsEntry, ValueToArrayPair<Integer, Integer> minArrayEntry, ValueToArrayPair<Double, Double> maxArrayEntry,
+                         ValueToArrayPair<Short, Short> averageArrayEntry, ValueToArrayPair<char[], Character> reverseArrayEntry) {
         this.coefficientsEntry = coefficientsEntry;
         this.minArrayEntry = minArrayEntry;
         this.maxArrayEntry = maxArrayEntry;
         this.averageArrayEntry = averageArrayEntry;
         this.reverseArrayEntry = reverseArrayEntry;
-        homeWork = new HomeWork();
+        homeWork = new HomeWork2();
     }
 
     @Parameterized.Parameters(name = "{index}: coefficient:{0}, min:{1}, max:{2}, average:{3}, reverse:{4}")
