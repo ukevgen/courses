@@ -1,11 +1,11 @@
 package com.rxn1d.courses;
 
+import java.util.Arrays;
+
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Map;
 
 import static org.junit.Assert.assertTrue;
 
@@ -16,15 +16,15 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(Parameterized.class)
 public class HomeWorkTest {
-    private Map.Entry<Integer, int[]> coefficientsEntry;
-    private Map.Entry<Integer, int[]> minArrayEntry;
-    private Map.Entry<Double, double[]> maxArrayEntry;
-    private Map.Entry<Short, short[]> averageArrayEntry;
-    private Map.Entry<char[], char[]> reverseArrayEntry;
+    private ValueToArrayPair<Integer, Integer> coefficientsEntry;
+    private ValueToArrayPair<Integer, Integer> minArrayEntry;
+    private ValueToArrayPair<Double, Double> maxArrayEntry;
+    private ValueToArrayPair<Short, Short> averageArrayEntry;
+    private ValueToArrayPair<char[], Character> reverseArrayEntry;
     private HomeWork homeWork;
 
-    public HomeWorkTest(Map.Entry<Integer, int[]> coefficientsEntry, Map.Entry<Integer, int[]> minArrayEntry, Map.Entry<Double, double[]> maxArrayEntry,
-                        Map.Entry<Short, short[]> averageArrayEntry, Map.Entry<char[], char[]> reverseArrayEntry) {
+    public HomeWorkTest(ValueToArrayPair<Integer, Integer> coefficientsEntry, ValueToArrayPair<Integer, Integer> minArrayEntry, ValueToArrayPair<Double, Double> maxArrayEntry,
+                        ValueToArrayPair<Short, Short> averageArrayEntry, ValueToArrayPair<char[], Character> reverseArrayEntry) {
         this.coefficientsEntry = coefficientsEntry;
         this.minArrayEntry = minArrayEntry;
         this.maxArrayEntry = maxArrayEntry;
@@ -35,11 +35,7 @@ public class HomeWorkTest {
 
     @Parameterized.Parameters(name = "{index}: coefficient:{0}, min:{1}, max:{2}, average:{3}, reverse:{4}")
     public static Iterable<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                {Constants.getRandomFrom(Constants.coefficientsMap), Constants.getRandomFrom(Constants.minArrayMap), Constants.getRandomFrom(Constants.maxArrayMap),
-                        Constants.getRandomFrom(Constants.averageArrayMap), Constants.getRandomFrom(Constants.reverseArrayMap)},
-
-        });
+        return Arrays.asList(TestVariables.getAllRandom(), TestVariables.getAllRandom(), TestVariables.getAllRandom());
     }
 
     @Test
@@ -49,21 +45,21 @@ public class HomeWorkTest {
 
     @Test
     public void testMin() {
-        assertTrue(homeWork.min(minArrayEntry.getValue()) == minArrayEntry.getKey());
+        assertTrue(homeWork.min(ArrayUtils.toPrimitive(minArrayEntry.right)) == minArrayEntry.left);
     }
 
     @Test
     public void testMax() {
-        assertTrue(homeWork.max(maxArrayEntry.getValue()) == maxArrayEntry.getKey());
+        assertTrue(homeWork.max(ArrayUtils.toPrimitive(maxArrayEntry.right)) == maxArrayEntry.left);
     }
 
     @Test
     public void testAverage() {
-        assertTrue(homeWork.average(averageArrayEntry.getValue()) == averageArrayEntry.getKey());
+        assertTrue(homeWork.average(ArrayUtils.toPrimitive(averageArrayEntry.right)) == averageArrayEntry.left);
     }
 
     @Test
     public void testReverse() {
-        assertTrue(homeWork.reverse(reverseArrayEntry.getValue()) == reverseArrayEntry.getKey());
+        assertTrue(homeWork.reverse(ArrayUtils.toPrimitive(reverseArrayEntry.right)) == reverseArrayEntry.left);
     }
 }
