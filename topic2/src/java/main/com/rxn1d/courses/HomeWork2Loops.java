@@ -1,26 +1,11 @@
 package com.rxn1d.courses;
 
 /**
- * Модифицируйте этот файл
+ * Модифицируйте этот класс(файл)
  *
  * @author Ievgen Tararaka
  */
-public class HomeWork2 {
-
-    /**
-     * Метод должен вернуть решение квадратического уравнения.
-     * <p>Например:
-     * Найти решение уравнение вида 5x^2 + 2x + 11
-     *
-     * @param a коэфициент для x^2
-     * @param b коэфициент x
-     * @param c константа
-     * @return решение уравнения
-     */
-    public int solveEquation(double a, double b, double c) {
-        return 1;
-    }
-
+public class HomeWork2Loops {
     /**
      * Метод должен вернуть минимальное число
      * из заданного массива.
@@ -30,7 +15,7 @@ public class HomeWork2 {
      * @param integers заданный массив типа int[]
      * @return минимальное число из массива
      */
-    public int min(int[] integers) {
+    public static int min(int[] integers) {
         return 1;
     }
 
@@ -43,7 +28,7 @@ public class HomeWork2 {
      * @param doubles заданный массив типа double[]
      * @return максимальное число из массива
      */
-    public int max(double[] doubles) {
+    public static int max(double[] doubles) {
         return 1;
     }
 
@@ -56,7 +41,7 @@ public class HomeWork2 {
      * @param shorts заданный массив типа short[]
      * @return среднее арифмитическое число из массива
      */
-    public int average(short[] shorts) {
+    public static int average(short[] shorts) {
         return 1;
     }
 
@@ -68,7 +53,7 @@ public class HomeWork2 {
      * @param chars заданный массив типа char[]
      * @return перевернутый массив
      */
-    public char[] reverse(char[] chars) {
+    public static char[] reverse(char[] chars) {
         return new char[1];
     }
 }

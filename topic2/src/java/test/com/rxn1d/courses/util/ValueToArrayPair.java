@@ -1,4 +1,4 @@
-package com.rxn1d.courses;
+package com.rxn1d.courses.util;
 
 import java.util.Arrays;
 
