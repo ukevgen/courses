@@ -31,6 +31,17 @@ public class HomeWork2EquationTest {
 
     @Test
     public void testEquation() {
-        assertTrue(HomeWork2Loops.min(ArrayUtils.toPrimitive(coefficientsEntry.right)) == coefficientsEntry.left);
+        int a = coefficientsEntry.right[0];
+        int b = coefficientsEntry.right[1];
+        int c = coefficientsEntry.right[2];
+        int expectedResponse = coefficientsEntry.left;
+
+        int response = HomeWork2Equation.solveEquation(a, b, c);
+
+        assertTrue("Уравнение решенно неверно. " +
+                        "\nКоэфициенты: a=" + a + ", b=" + b + ", c=" + c +
+                        "\nРезультат: " + response +
+                        "\nОжидаемый результат: " + expectedResponse,
+                response == expectedResponse);
     }
 }

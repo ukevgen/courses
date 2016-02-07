@@ -16,7 +16,7 @@ public class HomeWork2Equation {
      * @param c константа
      * @return решение уравнения
      */
-    public static int solveEquation(double a, double b, double c) {
-        return 1;
+    public static int solveEquation(int a, int b, int c) {
+        return 2;
     }
 }

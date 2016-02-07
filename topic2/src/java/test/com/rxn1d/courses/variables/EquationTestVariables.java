@@ -10,7 +10,7 @@ import com.rxn1d.courses.util.ValueToArrayPair;
  * @author Ievgen Tararaka
  */
 public class EquationTestVariables {
-    public static final List<ValueToArrayPair<Integer, int[]>> coefficients = new ArrayList<>();
+    public static final List<ValueToArrayPair<Integer, double[]>> coefficients = new ArrayList<>();
 
     static {
         EquationTestVariables.coefficients.add(new ValueToArrayPair(1, new Integer[]{3, 2, 1}));
