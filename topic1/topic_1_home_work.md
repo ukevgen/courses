@@ -13,9 +13,9 @@
 
 Скачать и установить [Git CMD и Git GUI](https://git-scm.com/downloads)
 
-#### Maven
+#### Maven (не обязательно)
 
-1\.Скачать и установить [Maven](https://maven.apache.org/download.cgi)
+1\. Скачать и установить [Maven](https://maven.apache.org/download.cgi)
 <br>2\. Добавить переменную среды как описанно [тут](https://maven.apache.org/install.html)
 
 ### 2. Найти литературу и необходимые источники для обучения
