@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import com.rxn1d.courses.util.ValueToArrayPair;
 import com.rxn1d.courses.variables.EquationTestVariables;
-import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
