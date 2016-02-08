@@ -2,7 +2,7 @@
 
 Содержание курса:
 
-1\.[Введение в JAVA](https://github.com/rxn1d/courses/blob/master/topic_1.md)
+1\.[Введение в JAVA](https://github.com/rxn1d/courses/blob/master/topic1/topic_1.md)
 * Введение. Цели курса
 * Краткая история языка и его характерные особенности.
 * Первая программа на JAVA, компиляция и исполнение
