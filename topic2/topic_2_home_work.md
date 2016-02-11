@@ -14,3 +14,8 @@
 
 ### 4. Почитать про code conventions
  * [Java Code Conventions](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
+
+### 5. Git (!)
+ * [Читать про Git](https://git-scm.com/book/ru/v1)
+ * Погуглить примеры использования
+ * Создать тестовый репозиторий на [github](https://github.com) и поиграть с ним
