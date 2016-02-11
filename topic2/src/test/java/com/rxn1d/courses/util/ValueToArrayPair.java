@@ -17,9 +17,9 @@ public class ValueToArrayPair<L, R> {
     @Override
     public String toString() {
         String rightString = Arrays.toString(right);
-        return "ValueToArrayPair{" +
-                "left=" + left +
-                ", right=" + rightString +
+        return "{" +
+                "ожидаемый результат=" + left +
+                ", входные данные=" + rightString +
                 '}';
     }
 }

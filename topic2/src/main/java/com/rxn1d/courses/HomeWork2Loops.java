@@ -28,7 +28,7 @@ public class HomeWork2Loops {
      * @param doubles заданный массив типа double[]
      * @return максимальное число из массива
      */
-    public static int max(double[] doubles) {
+    public static double max(double[] doubles) {
         return 1;
     }
 
@@ -41,7 +41,7 @@ public class HomeWork2Loops {
      * @param shorts заданный массив типа short[]
      * @return среднее арифмитическое число из массива
      */
-    public static int average(short[] shorts) {
+    public static short average(short[] shorts) {
         return 1;
     }
 

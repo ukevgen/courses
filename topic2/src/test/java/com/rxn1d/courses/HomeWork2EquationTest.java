@@ -2,6 +2,7 @@ package com.rxn1d.courses;
 
 import java.util.Arrays;
 
+import com.rxn1d.courses.util.TestUtils;
 import com.rxn1d.courses.util.ValueToArrayPair;
 import com.rxn1d.courses.variables.EquationTestVariables;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class HomeWork2EquationTest {
         this.coefficientsEntry = coefficientsEntry;
     }
 
-    @Parameterized.Parameters(name = "{index}: coefficient:{0}")
+    @Parameterized.Parameters(name = "{index}: метод solveEquation:{0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(EquationTestVariables.getAllRandom(), EquationTestVariables.getAllRandom(), EquationTestVariables.getAllRandom());
     }
@@ -37,10 +38,7 @@ public class HomeWork2EquationTest {
 
         int response = HomeWork2Equation.solveEquation(a, b, c);
 
-        assertTrue("Уравнение решенно неверно. " +
-                        "\nКоэфициенты: a=" + a + ", b=" + b + ", c=" + c +
-                        "\nРезультат: " + response +
-                        "\nОжидаемый результат: " + expectedResponse,
-                response == expectedResponse);
+        assertTrue(TestUtils.buildMessage("solveEquation", Arrays.toString(coefficientsEntry.right),
+                String.valueOf(response), String.valueOf(expectedResponse)), response == expectedResponse);
     }
 }

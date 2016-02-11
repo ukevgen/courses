@@ -13,9 +13,9 @@ public class EquationTestVariables {
     public static final List<ValueToArrayPair<Integer, double[]>> coefficients = new ArrayList<>();
 
     static {
-        EquationTestVariables.coefficients.add(new ValueToArrayPair(1, new Integer[]{3, 2, 1}));
-        EquationTestVariables.coefficients.add(new ValueToArrayPair(1, new Integer[]{9, 4, 1}));
-        EquationTestVariables.coefficients.add(new ValueToArrayPair(1, new Integer[]{1, 1, 1}));
+        EquationTestVariables.coefficients.add(new ValueToArrayPair(1, new Integer[]{1, 3, -4}));
+        EquationTestVariables.coefficients.add(new ValueToArrayPair(3, new Integer[]{1, 0, -9}));
+        EquationTestVariables.coefficients.add(new ValueToArrayPair(4, new Integer[]{1, -4, 0}));
     }
 
     public static Object[] getAllRandom() {

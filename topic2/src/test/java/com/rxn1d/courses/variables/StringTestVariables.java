@@ -19,10 +19,10 @@ public class StringTestVariables {
         countEvenList.add(new ValueToValuePair<>(3, "1_4_8_11_22"));
         countEvenList.add(new ValueToValuePair<>(3, "1_4_8_11_22"));
 
-        removeSymbolFromStringList.add(new ValueToValuePair<>("", new ValueToValuePair<>("", "")));
-        removeSymbolFromStringList.add(new ValueToValuePair<>("", new ValueToValuePair<>("", "")));
-        removeSymbolFromStringList.add(new ValueToValuePair<>("", new ValueToValuePair<>("", "")));
-        removeSymbolFromStringList.add(new ValueToValuePair<>("", new ValueToValuePair<>("", "")));
+        removeSymbolFromStringList.add(new ValueToValuePair<>("aaa", new ValueToValuePair<>("x", "aaa")));
+        removeSymbolFromStringList.add(new ValueToValuePair<>("axa", new ValueToValuePair<>("a", "aaxa")));
+        removeSymbolFromStringList.add(new ValueToValuePair<>("cbc", new ValueToValuePair<>("b", "cbc")));
+        removeSymbolFromStringList.add(new ValueToValuePair<>("1x1x1", new ValueToValuePair<>("1", "1x1x1")));
     }
 
     public static Object[] getAllRandom() {

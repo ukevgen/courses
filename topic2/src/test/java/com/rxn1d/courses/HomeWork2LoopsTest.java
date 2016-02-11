@@ -2,6 +2,7 @@ package com.rxn1d.courses;
 
 import java.util.Arrays;
 
+import com.rxn1d.courses.util.TestUtils;
 import com.rxn1d.courses.util.ValueToArrayPair;
 import com.rxn1d.courses.variables.LoopTestVariables;
 import org.apache.commons.lang3.ArrayUtils;
@@ -31,28 +32,44 @@ public class HomeWork2LoopsTest {
         this.reverseArrayEntry = reverseArrayEntry;
     }
 
-    @Parameterized.Parameters(name = "{index}: coefficient:{0}, min:{1}, max:{2}, average:{3}, reverse:{4}")
+    @Parameterized.Parameters(name = "{index}: метод min:{0}, метод max:{1}, метод average:{2}, метод reverse:{3}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(LoopTestVariables.getAllRandom(), LoopTestVariables.getAllRandom(), LoopTestVariables.getAllRandom());
     }
 
     @Test
     public void testMin() {
-        assertTrue(HomeWork2Loops.min(ArrayUtils.toPrimitive(minArrayEntry.right)) == minArrayEntry.left);
+        int expected = minArrayEntry.left;
+        Integer[] arguments = minArrayEntry.right;
+        int result = HomeWork2Loops.min(ArrayUtils.toPrimitive(minArrayEntry.right));
+        assertTrue(TestUtils.buildMessage("min", Arrays.toString(arguments), String.valueOf(result), String.valueOf(expected)),
+                expected == result);
     }
 
     @Test
     public void testMax() {
-        assertTrue(HomeWork2Loops.max(ArrayUtils.toPrimitive(maxArrayEntry.right)) == maxArrayEntry.left);
+        double expected = maxArrayEntry.left;
+        Double[] arguments = maxArrayEntry.right;
+        double result = HomeWork2Loops.max(ArrayUtils.toPrimitive(maxArrayEntry.right));
+        assertTrue(TestUtils.buildMessage("max", Arrays.toString(arguments), String.valueOf(result), String.valueOf(expected)),
+                expected == result);
     }
 
     @Test
     public void testAverage() {
-        assertTrue(HomeWork2Loops.average(ArrayUtils.toPrimitive(averageArrayEntry.right)) == averageArrayEntry.left);
+        int expected = averageArrayEntry.left;
+        Short[] arguments = averageArrayEntry.right;
+        short result = HomeWork2Loops.average(ArrayUtils.toPrimitive(averageArrayEntry.right));
+        assertTrue(TestUtils.buildMessage("average", Arrays.toString(arguments), String.valueOf(result), String.valueOf(expected)),
+                expected == result);
     }
 
     @Test
     public void testReverse() {
-        assertTrue(HomeWork2Loops.reverse(ArrayUtils.toPrimitive(reverseArrayEntry.right)) == reverseArrayEntry.left);
+        char[] expected = reverseArrayEntry.left;
+        Character[] arguments = reverseArrayEntry.right;
+        char[] result = HomeWork2Loops.reverse(ArrayUtils.toPrimitive(reverseArrayEntry.right));
+        assertTrue(TestUtils.buildMessage("reverse", Arrays.toString(arguments), String.valueOf(result), String.valueOf(expected)),
+                Arrays.equals(expected, result));
     }
 }
