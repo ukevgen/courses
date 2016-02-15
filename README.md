@@ -42,7 +42,7 @@
   - Приложение-калькулятор
 * Доп. задание для успевающих
 
-[ДЗ №3](https://github.com/rxn1d/courses/blob/master/topic3/topic_3_home_work.md)
+[ДЗ #3](https://github.com/rxn1d/courses/blob/master/topic3/topic_3_home_work.md)
  * Изучаем Git
  * Доделываем ДЗ № 2 + Практику
  * Практика - Реализовать калькулятор
