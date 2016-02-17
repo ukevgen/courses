@@ -92,6 +92,6 @@ public class JsonSerializationTest {
     }
 
     private static void equals(String expectedJson, String actualJson) {
-        assertTrue(TestUtils.jsonMessage(expectedJson2, actualJson), equalsIgnoreWhiteSpaces(expectedJson2, actualJson));
+        assertTrue(TestUtils.jsonMessage(expectedJson, actualJson), equalsIgnoreWhiteSpaces(expectedJson, actualJson));
     }
 }

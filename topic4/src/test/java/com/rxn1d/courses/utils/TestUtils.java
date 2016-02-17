@@ -28,7 +28,7 @@ public class TestUtils {
     }
 
     public static String jsonMessage(String expectedJson, String actualJson) {
-        return "JSON не совпадает, ожидаемый=" + expectedJson +
-                ",\n результат=" + actualJson;
+        return "JSON без учета пробельных символов не совпадает, ожидаемый JSON=" + expectedJson.replaceAll("\\s+", "") +
+                ",\n результат=" + actualJson.replaceAll("\\s+", "");
     }
 }

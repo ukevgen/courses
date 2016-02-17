@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -54,9 +55,9 @@ public class JsonDeserializationTest {
 
         equals("manufacturer", "Volvo", secondCar.getManufacturer());
         equals("modelName", "V40", secondCar.getManufacturer());
-        equals("vin", "CBE99999", secondCar.getManufacturer());
-        equals("lengthMillimeters", 5300, secondCar.getManufacturer());
-        equals("heightMillimeters", 3155, secondCar.getManufacturer());
+        equals("vin", "CBE99999", secondCar.getVin());
+        equals("lengthMillimeters", 5300, secondCar.getHeightMillimeters());
+        equals("heightMillimeters", 3155, secondCar.getLengthMillimeters());
     }
 
     @Test
@@ -73,6 +74,6 @@ public class JsonDeserializationTest {
     }
 
     private static void equals(String fieldName, Object expected, Object actual) {
-        equals(TestUtils.fieldMessage(fieldName, expected, actual), expected, actual);
+        assertEquals(TestUtils.fieldMessage(fieldName, expected, actual), expected, actual);
     }
 }
