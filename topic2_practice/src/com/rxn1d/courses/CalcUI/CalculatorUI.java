@@ -2,6 +2,7 @@ package com.rxn1d.courses.CalcUI;
 import javax.swing.JFrame;
 /**
  * Created by Администратор on 16.02.2016.
+ * change
  */
 
 public class CalculatorUI extends javax.swing.JFrame {
