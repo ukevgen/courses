@@ -54,7 +54,7 @@ public class JsonDeserializationTest {
         Car secondCar = cars[1];
 
         equals("manufacturer", "Volvo", secondCar.getManufacturer());
-        equals("modelName", "V40", secondCar.getManufacturer());
+        equals("modelName", "V40", secondCar.getModelName());
         equals("vin", "CBE99999", secondCar.getVin());
         equals("lengthMillimeters", 5300, secondCar.getLengthMillimeters());
         equals("heightMillimeters", 3155, secondCar.getHeightMillimeters());
