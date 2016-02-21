@@ -17,13 +17,11 @@ public class SerializationFactory {
      * @return имплементацию десериализатора
      */
     public static CarParkingDeserializer getDeserializer(Format format) {
-       // if (format == Format.JSON)
-
+        if (format == Format.JSON)
             return new MyCarParkingDeserializerJSON();
-
-
+        else
+            return new MyCarParkingDeserializerXML();
         // TODO - здесь будет ваша логика. Необходимо вернуть реализацию интерфейса
-
     }
 
     /**
