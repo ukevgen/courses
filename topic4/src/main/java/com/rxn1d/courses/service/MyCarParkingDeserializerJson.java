@@ -21,31 +21,28 @@ public class MyCarParkingDeserializerJSON implements CarParkingDeserializer {
         }
         // создаем объект Carparking && Car
         CarParking carParking = new CarParking();
-        Car[] cars = new Car[]{};
+
         /////////////////////////////////////////////////
-        carParking.setAddress(arrayList.get(0)[1]); // адрес парковки
+        carParking.setAddress(arrayList.get(0)[0]); // адрес парковки
         carParking.setParkingName(arrayList.get(1)[1]); // название парковки
         // заполняем паркинг
         int kol = 0;
         if (arrayList.size() > 6)
             kol = 1;
-
+        ArrayList<Car> cars = new ArrayList<>();
         for (int i = 3; i < arrayList.size(); i++) {
             if (arrayList.get(i).length == 1) { // пропускаем разделитель нового объекта в масиве car
                 kol++;
                 break;
             } else {
-                cars[kol - 1] = new Car();
-                for (int j = 0; j < arrayList.get(i).length; j++) {
-                    cars[kol - 1].setManufacturer(arrayList.get(i)[1]);
-                    cars[kol - 1].setModelName(arrayList.get(i)[1]);
-                    cars[kol - 1].setVin(arrayList.get(i)[1]);
-                    cars[kol - 1].setLengthMillimeters(Integer.parseInt(arrayList.get(i)[1]));
-                    cars[kol - 1].setHeightMillimeters(Integer.parseInt(arrayList.get(i)[1]));
+
+                for (int j = 0; j < 2; j++) {
+                    cars.add(new Car(arrayList.get(i)[1],arrayList.get(i)[1],arrayList.get(i)[1],Integer.parseInt(arrayList.get(i)[1]),Integer.parseInt(arrayList.get(i)[1])));
+
                 }
             }
         }
-        carParking.setCars(cars);
+        carParking.setCars(cars.toArray(new Car[cars.size()]));
         return carParking;
     }
 
