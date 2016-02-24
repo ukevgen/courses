@@ -55,13 +55,13 @@
   <br>``-> New user with name = Ievgen and balance = 550$ is added to table``
   + **Ставка от игрока**
   <br>**Input:**
-  <br>``<- BET Ievgen 50 RED`` - для красного
-  <br>``<- BET Ievgen 50 BLACK`` - для черного
-  <br>``<- BET Ievgen 50 ODD`` - для нечетного
-  <br>``<- BET Ievgen 50 EVEN`` - для четного
-  <br>``<- BET Ievgen 50 SMALL`` - для чисел от 1 до 18
-  <br>``<- BET Ievgen 50 BIG`` - для чисел от 19 до 36
-  <br>``<- BET Ievgen 50 STRAIGHT_UP`` - для 1-го номера
+  <br>``<- BET Ievgen 50 RED`` - 50$ на красные
+  <br>``<- BET Ievgen 50 BLACK`` - 50$ на черные
+  <br>``<- BET Ievgen 50 ODD`` - 50$ на нечетные
+  <br>``<- BET Ievgen 50 EVEN`` - 50$ на четные
+  <br>``<- BET Ievgen 50 SMALL`` - 50$ на числа от 1 до 18
+  <br>``<- BET Ievgen 50 BIG`` - 50$ на числа от 19 до 36
+  <br>``<- BET Ievgen 50 STRAIGHT_UP 11`` - 50$ на 11-й номер
   <br>**Output:**
   <br>``-> BET ACCEPTED`` - если ставка принята
   <br>``-> BET NOTE ACCEPTED`` - если ставка не принята(пользователь уже ставил или у него недостаточо средств на балансе)
