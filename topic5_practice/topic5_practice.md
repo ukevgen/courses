@@ -42,19 +42,19 @@
   -> New user with name = Ievgen and balance = 550$ is added to table
 ```
 * Список комманд, их аргументы и возвращаемый результат:
-  + Cтарт игры:
-  <br>Input:
+  + **Cтарт игры**
+  <br>**Input:**
   <br>``<- Пустой список аргументов для старта игры``
-  <br>Output:
+  <br>**Output:**
   <br>``-> Game Started``
   <br>``-> Genarated Roulette: [10-RED, 2-BLACK, 0-GREEN, 11-BLACK ...]``
-  + Добавление игрока за стол
-  <br>Input:
+  + **Добавление игрока за стол**
+  <br>**Input:**
   <br>``<- NEW_USER Ievgen 550``
-  <br>Output:
+  <br>**Output:**
   <br>``-> New user with name = Ievgen and balance = 550$ is added to table``
-  + Ставка от игрока
-  <br>Input:
+  + **Ставка от игрока**
+  <br>**Input:**
   <br>``<- BET Ievgen 50 RED`` - для красного
   <br>``<- BET Ievgen 50 BLACK`` - для черного
   <br>``<- BET Ievgen 50 ODD`` - для нечетного
@@ -62,23 +62,23 @@
   <br>``<- BET Ievgen 50 SMALL`` - для чисел от 1 до 18
   <br>``<- BET Ievgen 50 BIG`` - для чисел от 19 до 36
   <br>``<- BET Ievgen 50 STRAIGHT_UP`` - для 1-го номера
-  <br>Output:
+  <br>**Output:**
   <br>``-> BET ACCEPTED`` - если ставка принята
   <br>``-> BET NOTE ACCEPTED`` - если ставка не принята(пользователь уже ставил или у него недостаточо средств на балансе)
-  + Запуск рулетки
-  <br>Input:
+  + **Запуск рулетки**
+  <br>**Input:**
   <br>``<- PLAY_GAME`` - для запуска рулетки
-  <br>Output:
+  <br>**Output:**
   <br>
   ```
   -> Winning number = 2-BLACK
   -> Player: Ievgen +50$
   -> Player: Alex -110$
   ```
-  + Вывод статистики
-  <br>Input:
+  + **Вывод статистики**
+  <br>**Input:**
   <br>``<- STATS`` - для запроса статистики
-  <br>Output:
+  <br>**Output:**
   <br>
   ```
   -> STATS
