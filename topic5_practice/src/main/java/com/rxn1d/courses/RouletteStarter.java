@@ -8,6 +8,6 @@ package com.rxn1d.courses;
 public class RouletteStarter {
 
     public static void main(String[] args) {
-        System.out.println("Roulette start");
+        System.out.println("Game Started");
     }
 }

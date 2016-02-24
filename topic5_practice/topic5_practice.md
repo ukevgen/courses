@@ -37,12 +37,32 @@
 * Каждое обращение к игре должно начинаться с имени команды и ее агрументов. Например:
 ```
   -> Game Started
+  -> Genarated Roulette: [10-RED, 2-BLACK, 0-GREEN, 11-BLACK ...]
   <- NEW_USER Ievgen 550
   -> New user with name = Ievgen and balance = 550$ is added to table
 ```
 * Список комманд, их аргументы и возвращаемый результат:
   + Cтарт игры:
-   <br>``<- Пустой список аргументов для старта игры ``
-   <br>``-> Genarated Roulette: [10-R, 2-B, 0-G, 11-B ...]``
-  +
+  <br>Input:
+  <br>``<- Пустой список аргументов для старта игры``
+  <br>Output:
+  <br>``-> Game Started``
+  <br>``-> Genarated Roulette: [10-RED, 2-BLACK, 0-GREEN, 11-BLACK ...]``
+  + Добавление игрока за стол
+  <br>Input:
+  <br>``<- NEW_USER Ievgen 550``
+  <br>Output:
+  <br>``-> New user with name = Ievgen and balance = 550$ is added to table``
+  + Ставка от игрока
+  <br>Input:
+  <br>``<- BET Ievgen 50 RED`` - для красного
+  <br>``<- BET Ievgen 50 BLACK`` - для черного
+  <br>``<- BET Ievgen 50 ODD`` - для нечетного
+  <br>``<- BET Ievgen 50 EVEN`` - для четного
+  <br>``<- BET Ievgen 50 SMALL`` - для чисел от 1 до 18
+  <br>``<- BET Ievgen 50 BIG`` - для чисел от 19 до 36
+  <br>``<- BET Ievgen 50 STRAIGHT_UP`` - для 1-го номера
+  <br>Output:
+  <br>``-> BET ACCEPTED`` - если ставка принята
+  <br>``-> BET NOTE ACCEPTED`` - если ставка не принята(пользователь уже ставил или у него недостаточный баланс)
 
