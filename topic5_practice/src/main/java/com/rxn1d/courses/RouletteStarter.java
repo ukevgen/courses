@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class RouletteStarter {
     private static long casinoBalance = 200000;
-    protected static ArrayList<Player> players = new ArrayList<>();
+    //protected static ArrayList<Player> players = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
 
@@ -31,24 +31,30 @@ public class RouletteStarter {
             if (comands[0].equals("EXIT"))
                 break;
             switch (comands[0]) {
-                case "NEW_USER":
-                    setPlayer(comands[1], Long.parseLong(comands[2]));
-                    break;
-                case "PLAY_GAME":{
-                    int random =new Random().nextInt(37);
-                    if (random==0)
-                        System.out.println("-> Winning number="+random+"-GREEN");
-                    else if (random%2!=0)
-                        System.out.println("-> Winning number="+random+"-RED");
+                case "NEW_USER": {
+                    if (Player.getCountPlayers() >= 5)
+                        System.out.println("ERRO, table is completed");
                     else
-                        System.out.println("-> Winning number="+random+"-BLACK");
-                    stat.setStatNumbers(""+random);
+                        setPlayer(comands[1], Long.parseLong(comands[2]));
                 }
-                    break;
+
+                break;
+                case "PLAY_GAME": {
+                    int random = new Random().nextInt(37);
+                    if (random == 0)
+                        System.out.println("-> Winning number=" + random + "-GREEN");
+                    else if (random % 2 != 0)
+                        System.out.println("-> Winning number=" + random + "-RED");
+                    else
+                        System.out.println("-> Winning number=" + random + "-BLACK");
+                    stat.setStatNumbers("" + random);
+                }
+                break;
                 case "STATS":
                     System.out.println(stat.toString());
                     break;
-                case "BET":;
+                case "BET":
+                    ;
                     break;
                 default:
                     break;
@@ -58,8 +64,8 @@ public class RouletteStarter {
     }
 
     static void setPlayer(String name, long balance) {
-        players.add(new Player(name,balance));
-        System.out.println("-> New user with name = "+name +" and balance = "+balance+"$ is added to table");
+        Player.setPlayer(name, balance);
+        System.out.println("-> New user with name = " + name + " and balance = " + balance + "$ is added to table" + Player.getCountPlayers());
     }
 
     static void runRoulete() {
