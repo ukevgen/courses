@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author Ievgen Tararaka
  */
 public class Topic6 {
-    public static void main(String[] args) throws Exception {
+    public static void test() throws Exception {
         // 1) Classic Error
         int[] array = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(reverse(array)));
