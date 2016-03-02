@@ -1,18 +1,17 @@
 package com.rxn1d.courses;
 
-import java.security.KeyStore;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by Администратор on 28.02.2016.
+ *
+ * @author User
  */
-public class StatRoulette extends InitRoulette {
-    private TreeMap<String, Integer> statRoulette = new TreeMap<>(roulette);
+public  class StatRoulette extends InitRoulette {
+    private static TreeMap<String, Integer> statRoulette = new TreeMap<>(roulette);
 
 
-    public void setStatNumbers(String number) {
+    public  void setStatNumbers(String number) {
         statRoulette.put(number, statRoulette.get(number) + 1);
 
     }
@@ -49,14 +48,15 @@ public class StatRoulette extends InitRoulette {
             }
         }
         return "["+"RED ="+countRed+", "+"BLACK ="+countBlack+", "+"ODD ="+countOdd+", "+
-                    "EVEN ="+countEeven+", "+"SMALL ="+countSmall+", "+"BIG ="+countBig+", "+
-                    "STRAIGHT_UP = " + countStaight + "]";
+                "EVEN ="+countEeven+", "+"SMALL ="+countSmall+", "+"BIG ="+countBig+", "+
+                "STRAIGHT_UP = " + countStaight + "]" +"\n"+"Balance = "+getCasinoBalance()+"$"+"\n";
 
     }
 
-    public void getStatRoulette() {
+    public  void getStatRoulette() {
         for (Map.Entry<String, Integer> entry : statRoulette.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
     }
+
 }

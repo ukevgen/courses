@@ -6,9 +6,15 @@ import java.util.Map;
 /**
  * Created by Администратор on 28.02.2016.
  */
+import java.util.HashMap;
+import java.util.Map;
+/**
+ *
+ * @author User
+ */
 class InitRoulette implements Roulette {
     protected static HashMap<String, Integer> roulette = new HashMap();
-
+    private static long casinoBalance = 200_000_000;
 
     public void SetRoulette() {
         for (int i = 0; i < numbers.length; i++) {
@@ -56,6 +62,15 @@ class InitRoulette implements Roulette {
             return true;
         else return false;
     }
+
+    public static long getCasinoBalance() {
+        return casinoBalance;
+    }
+
+    public static void setCasinoBalance(long casinoBalance) {
+        InitRoulette.casinoBalance = casinoBalance;
+    }
+
 
 
 }
