@@ -3,7 +3,7 @@ package com.courses.spalah.list;
 /**
  * @author Ievgen Tararaka
  */
-public interface List<E> extends Iterable<E> {
+public interface MyList<E> extends Iterable<E> {
 
     /**
      * Returns the number of elements in this list.

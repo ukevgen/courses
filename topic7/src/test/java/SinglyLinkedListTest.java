@@ -1,5 +1,5 @@
 import com.courses.spalah.list.Car;
-import com.courses.spalah.list.List;
+import com.courses.spalah.list.MyList;
 import com.courses.spalah.list.ListFactory;
 import com.courses.spalah.list.ListType;
 import org.junit.Before;
@@ -16,8 +16,8 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(JUnit4.class)
 public class SinglyLinkedListTest {
-    private List<String> stringList;
-    private List<Car> carList;
+    private MyList<String> stringList;
+    private MyList<Car> carList;
 
     @Before
     public void setUp() {

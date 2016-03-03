@@ -7,14 +7,14 @@ import java.util.LinkedList;
  * @author Ievgen Tararaka
  */
 public class ListFactory {
-    public static <E> List<E> createList(ListType listType) {
-        return new MyList<>();
+    public static <E> com.courses.spalah.list.MyList<E> createList(ListType listType) {
+        return new MyMyList();
     }
 
-    public static class MyList<E> implements List<E> {
+    public static class MyMyList<E> implements com.courses.spalah.list.MyList<E> {
         java.util.List<E> list = new LinkedList<>();
 
-        public MyList() {
+        public MyMyList() {
         }
 
         @Override
