@@ -66,5 +66,5 @@ public interface MyList<E> extends Iterable<E> {
      * @param element element whose presence in this list is to be tested
      * @return {@code true} if this list contains the specified element
      */
-    public boolean contains(E element);
+    boolean contains(E element);
 }
