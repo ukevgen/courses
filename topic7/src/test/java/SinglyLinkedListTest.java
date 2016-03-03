@@ -1,15 +1,13 @@
 import com.courses.spalah.list.Car;
-import com.courses.spalah.list.MyList;
 import com.courses.spalah.list.ListFactory;
 import com.courses.spalah.list.ListType;
+import com.courses.spalah.list.MyList;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Ievgen Tararaka
