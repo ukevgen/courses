@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 import com.courses.spalah.list.Car;
 import com.courses.spalah.list.ListFactory;
 import com.courses.spalah.list.ListType;
@@ -98,8 +100,11 @@ public class SinglyLinkedListTest {
         }
 
         carList.remove(2); // auris sx4
-        carList.remove(1); // auris
-        carList.remove(0); //
+        Iterator<Car> iterator = carList.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+            iterator.remove(); // auris // [empty]
+        }
 
         assertTrue(carList.isEmpty());
     }
