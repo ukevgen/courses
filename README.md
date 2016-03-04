@@ -98,3 +98,4 @@
 
 [ДЗ #8](https://github.com/rxn1d/courses/blob/master/topic8/topic8_home_work.md)
 * Реализовать связный список
+* Сделать анализатор текста
