@@ -19,14 +19,13 @@ public class RouletteStarter {
         System.out.println("->Game Started");
         InitRoulette roulette = new InitRoulette();
         roulette.SetRoulette();
-        ReadCommand readCommands=new ReadCommand();
+        ReadCommand readCommands = new ReadCommand();
         System.out.println("->Genarated Roulette:" + roulette.toString());
 
 
         while (readCommands.readCommand()) {
 
         }
-
 
 
     }

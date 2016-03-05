@@ -11,12 +11,11 @@ package com.rxn1d.courses;
 
 
 /**
- *
  * @author User
  */
 public interface Balance {
-     void setBalance(int n);
+    void setBalance(int n);
 
-     long getBalance();
+    long getBalance();
 
 }

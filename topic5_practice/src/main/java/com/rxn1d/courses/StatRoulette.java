@@ -4,14 +4,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- *
  * @author User
  */
-public  class StatRoulette extends InitRoulette {
+public class StatRoulette extends InitRoulette {
     private static TreeMap<String, Integer> statRoulette = new TreeMap<>(roulette);
 
 
-    public  void setStatNumbers(String number) {
+    public void setStatNumbers(String number) {
         statRoulette.put(number, statRoulette.get(number) + 1);
 
     }
@@ -28,32 +27,32 @@ public  class StatRoulette extends InitRoulette {
         int countSmall = 0;
 
         for (Map.Entry<String, Integer> entry : statRoulette.entrySet()) {
-            String number=entry.getKey();
-            boolean isZero=number.equals("0");
+            String number = entry.getKey();
+            boolean isZero = number.equals("0");
             if (entry.getValue() != 0)
-                countStaight+=entry.getValue();
-            if (!isZero){
+                countStaight += entry.getValue();
+            if (!isZero) {
                 if (isRed(number))
-                    countRed+=entry.getValue();
+                    countRed += entry.getValue();
                 else
-                    countBlack+=entry.getValue();
+                    countBlack += entry.getValue();
                 if (isBig(number))
-                    countBig+=entry.getValue();
+                    countBig += entry.getValue();
                 else
-                    countSmall+=entry.getValue();
+                    countSmall += entry.getValue();
                 if (isEven(number))
-                    countEeven+=entry.getValue();
+                    countEeven += entry.getValue();
                 else
-                    countOdd+=entry.getValue();
+                    countOdd += entry.getValue();
             }
         }
-        return "["+"RED ="+countRed+", "+"BLACK ="+countBlack+", "+"ODD ="+countOdd+", "+
-                "EVEN ="+countEeven+", "+"SMALL ="+countSmall+", "+"BIG ="+countBig+", "+
-                "STRAIGHT_UP = " + countStaight + "]" +"\n"+"Balance = "+getCasinoBalance()+"$"+"\n";
+        return "[" + "RED =" + countRed + ", " + "BLACK =" + countBlack + ", " + "ODD =" + countOdd + ", " +
+                "EVEN =" + countEeven + ", " + "SMALL =" + countSmall + ", " + "BIG =" + countBig + ", " +
+                "STRAIGHT_UP = " + countStaight + "]" + "\n" + "Balance = " + getCasinoBalance() + "$" + "\n";
 
     }
 
-    public  void getStatRoulette() {
+    public void getStatRoulette() {
         for (Map.Entry<String, Integer> entry : statRoulette.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }

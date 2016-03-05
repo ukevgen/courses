@@ -8,8 +8,8 @@ import java.util.Map;
  */
 import java.util.HashMap;
 import java.util.Map;
+
 /**
- *
  * @author User
  */
 class InitRoulette implements Roulette {
@@ -33,7 +33,7 @@ class InitRoulette implements Roulette {
                 result += "-RED, ";
             else result += "-BLACK, ";
         }
-        return result.substring(0,result.length()-2)+"]";
+        return result.substring(0, result.length() - 2) + "]";
     }
 
     public HashMap<String, Integer> getRoulette() {
@@ -70,7 +70,6 @@ class InitRoulette implements Roulette {
     public static void setCasinoBalance(long casinoBalance) {
         InitRoulette.casinoBalance = casinoBalance;
     }
-
 
 
 }
