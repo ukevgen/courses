@@ -1,64 +1,68 @@
 package com.rxn1d.courses;
 
 /**
- * Created by Администратор on 24.02.2016.
+ * Created by Администратор on 06.03.2016.
  */
-
-import java.util.HashMap;
-
-/**
- * @author User
- */
-public class Player extends InitRoulette {
-    // private static Player players;
-    private static int countPlayers = 0;
+public class Player {
     private String name;
-    private long balance;
-    private String bet;
-    private int betSum;
+    private int balance;
 
-    public Player(String name, long balance, String bet, int betSum) {
+    Player(String name, int balance) {
         this.name = name;
         this.balance = balance;
-        this.bet = bet;
-        this.betSum = betSum;
-        countPlayers++;
-    }
-
-    public void setBalance(long n) {
-        this.balance = n;
-    }
-
-    public void setBet(String bet) {
-        this.bet = bet;
-    }
-
-    public String getBet() {
-        return bet;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setBetSum(int betSum) {
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+}
+
+class PlayerBets extends Player {
+    private String betType;
+    private int betSum;
+    private int number;
+
+    public PlayerBets(String name, int balance, String betType, int betSum, int number) {
+        super(name, balance);
+        this.betType = betType;
         this.betSum = betSum;
+        this.number = number;
     }
 
     public int getBetSum() {
         return betSum;
     }
 
-    public long getBalance() {
-        return balance;
+    public String getName() {
+        return super.getName();
     }
 
-    public static int getCountPlayers() {
-        return countPlayers;
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public void updateBalance(int number) {
-
+    public String getBetType() {
+        return betType;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setBalance(int balance) {
+        super.setBalance(balance);
+    }
+
+    public void setBetType(String betType) {
+        this.betType = betType;
+    }
 }
