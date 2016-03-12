@@ -6,7 +6,12 @@ package com.rxn1d.courses;
  * and open the template in the editor.
  */
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Set;
@@ -31,7 +36,6 @@ public class RouletteStarter {
         Bet bet = new Bet();
         System.out.println("->Genarated Roulette:");
         getRouletNumbers(table, bet);
-
         ReadCommand read = new ReadCommand(bet, table);
 
         while (read.readCommand()) ;
