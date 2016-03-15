@@ -67,9 +67,9 @@ public interface MultiMap<K, V> {
 
     /**
      * Return size of current multimap.
-     * Size is equals to keys count.
+     * Size is equals to values total count.
      *
-     * @return
+     * @return count of all values
      */
     int size();
 }
