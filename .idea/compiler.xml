@@ -37,6 +37,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="topic8" />
+        <module name="topic9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -44,6 +45,7 @@
       <module name="topic4" target="1.8" />
       <module name="topic7" target="1.8" />
       <module name="topic8" target="1.8" />
+      <module name="topic9" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
