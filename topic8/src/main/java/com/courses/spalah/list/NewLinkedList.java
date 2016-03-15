@@ -5,10 +5,10 @@ import java.util.Iterator;
 /**
  * Created by Администратор on 10.03.2016.
  */
-public class NewLinkedList<E> implements MyList {
-    private Entry head;
-    private Entry next;
-    private Entry tek;
+public class NewLinkedList<E> implements MyList<E> {
+    private Entry<E> head;
+    private Entry<E> next;
+    private Entry<E> tek;
     private int size;
     private int currentIndex;
 
@@ -27,7 +27,7 @@ public class NewLinkedList<E> implements MyList {
     }
 
     @Override
-    public boolean add(Object element) {
+    public boolean add(E element) {
         Entry newEntry = new Entry(element, null);
         next = head;
         while (next.getNext() != null) {
@@ -39,13 +39,13 @@ public class NewLinkedList<E> implements MyList {
     }
 
     @Override
-    public Object get(int index) {
+    public E get(int index) {
         tek = getIndex(index);
         return tek.getElement();
     }
 
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, E element) {
         next = head;
         Entry x = getIndex(index - 1);
         Entry y = getIndex(index);
@@ -66,13 +66,13 @@ public class NewLinkedList<E> implements MyList {
 
 
     @Override
-    public Object set(int index, Object element) {
+    public E set(int index, E element) {
         getIndex(index).setElement(element);
         return null;
     }
 
     @Override
-    public boolean contains(Object element) {
+    public boolean contains(E element) {
         next = head;
         boolean ex = false;
         while (next.getNext() != null) {
@@ -99,7 +99,7 @@ public class NewLinkedList<E> implements MyList {
             }
 
             @Override
-            public Object next() {
+            public E next() {
                 return next.getElement();
             }
 

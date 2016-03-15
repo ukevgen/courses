@@ -8,6 +8,8 @@ import java.util.*;
 public final class TextMainer {
     static int countSymbols;
     static int countSentence;
+    static final int MINIMALLEN = 2;
+    static ArrayList<String> asList;
 
     static void HowMuchSymbols(char a) {
         if (a != ' ')
@@ -25,22 +27,18 @@ public final class TextMainer {
     }
 
     static String HowMuchUniqueWords(ArrayList<Character> list) {
-        String s = prepare(list);
-        HashSet<String> set = new HashSet<String>(Arrays.asList(s.split(" ")));
+        HashSet<String> set = new HashSet<String>(asList);
         return String.valueOf(set.size());
     }
 
     static void HowMuchSentence(char ch) {
-        if (ch == '.')
+        if (ch == '.' || ch == '?' || ch == '!')
             countSentence++;
     }
 
     static String frequentWord(ArrayList<Character> list) {
-        String s = prepare(list);
         String word = "";
         int kol = 0;
-        ArrayList<String> asList = new ArrayList<String>(Arrays.asList(s.split(" ")));
-        //HashSet<String> set= new HashSet<String>(asList);
         HashMap<String, Integer> map = preapareMap(asList);
         for (String str : asList) {
             map.put(str, map.get(str) + 1);
@@ -58,19 +56,17 @@ public final class TextMainer {
     }
 
     static String theShortWordLength(ArrayList<Character> list) {
-        String s = prepare(list);
-        HashSet<String> set = new HashSet<String>(Arrays.asList(s.split(" ")));
-        int len = 2;
+        HashSet<String> set = new HashSet<String>(asList);
+        int len = MINIMALLEN;
         for (String str : set) {
-            if (str.length() < len && str.length()!=1)
+            if (str.length() < len && str.length() != 1)
                 len = str.length();
         }
         return String.valueOf(len);
     }
 
     static String theLongestWordLength(ArrayList<Character> list) {
-        String s = prepare(list);
-        HashSet<String> set = new HashSet<String>(Arrays.asList(s.split(" ")));
+        HashSet<String> set = new HashSet<String>(asList);
         int len = 0;
         for (String str : set) {
             if (str.length() > len)
@@ -81,9 +77,7 @@ public final class TextMainer {
     }
 
     static String statWords(ArrayList<Character> list) {
-        String s = prepare(list);
         String result = "";
-        ArrayList<String> asList = new ArrayList<String>(Arrays.asList(s.split(" ")));
         HashMap<String, Integer> map = preapareMap(asList);
         for (String str : asList) {
             map.put(str, map.get(str) + 1);
@@ -113,7 +107,7 @@ public final class TextMainer {
         return result;
     }
 
-    private static String prepare(ArrayList<Character> list) {
+    public static void prepare(ArrayList<Character> list) {
         String s = "";
         String s1 = "";
         for (Character ch : list) {
@@ -122,8 +116,9 @@ public final class TextMainer {
             if (Character.isAlphabetic(ch) || ch.equals(' '))
                 s += Character.toLowerCase(ch);
         }
+        s1 = s.replaceAll("\\s+", " ");
+        asList = new ArrayList<String>(Arrays.asList(s1.split(" ")));
 
-        return s.replaceAll("\\s+", " ");
     }
 
     private static HashMap<String, Integer> preapareMap(ArrayList<String> asList) {

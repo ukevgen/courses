@@ -35,6 +35,7 @@ public class TextAnalyzer {
         in.close();
         try {
             out = new FileWriter(new File("F:\\JavaLesson\\courses\\topic8\\src\\main\\resources\\output.txt"));
+            prepare(list);
             out.write("Общее количество символов " + getCountSymbols() + "\n");
             out.write("Количество предложений " + getCountSentence() + "\n");
             out.write("Количество слов " + HowMuchWords(list) + "\n");
