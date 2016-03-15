@@ -102,4 +102,6 @@
 
 9\. Разбор предыдущей домашней работы
 
-[ДЗ #9]()
+[ДЗ #9](https://github.com/rxn1d/courses/blob/master/topic9/topic9_home_work.md)
+* Читаем про обобщения
+* Имплементим мультимапу
