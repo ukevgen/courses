@@ -44,13 +44,19 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
 
     @Override
     public boolean remove(K k, V v) {
-        if (!map.containsKey(k)) return false;
+        boolean b = false;
         for (Map.Entry<K, Collection<V>> entry : map.entrySet()) {
-            if (entry.getKey().equals(k)){
-                entry.getValue().remove(v);
+            if (entry.getKey().equals(k)) {
+                value = entry.getValue();
+                if (value.contains(v)) {
+                    value.remove(v);
+                    map.put(k, value);
+                    b = true;
+                }
             }
         }
-        return true;
+        return b;
+
     }
 
     @Override
