@@ -11,7 +11,8 @@
 
 ### Устанавливаем [MySQL Community Edition (GPL)](http://dev.mysql.com/downloads/) (это сервер)
 ### Устанавливаем любой SQL клиент ([Heidi](http://www.heidisql.com/), [DBeaver](http://dbeaver.jkiss.org/), [My SQL Workbench](http://dev.mysql.com/downloads/workbench/), [DataGrip](https://www.jetbrains.com/datagrip/) и т.д.)
- * Создаем 2 таблицы
+ * Создаем базу данных test
+ * В ней создаем 2 таблицы
    + person
       * id (целый тип, первичный ключ)
       * first_name (строковый тип)
