@@ -10,7 +10,7 @@
  * Нормализация
 
 ### Устанавливаем [MySQL Community Edition (GPL)](http://dev.mysql.com/downloads/) (это сервер)
-### Устанавливаем любой SQL клиент ([Heidi](http://www.heidisql.com/), [DBeaver](http://dbeaver.jkiss.org/), [My SQL Workbench](http://dev.mysql.com/downloads/workbench/), [DataGrip](https://www.jetbrains.com/datagrip/))
+### Устанавливаем любой SQL клиент ([Heidi](http://www.heidisql.com/), [DBeaver](http://dbeaver.jkiss.org/), [My SQL Workbench](http://dev.mysql.com/downloads/workbench/), [DataGrip](https://www.jetbrains.com/datagrip/) и т.д.)
  * Создаем 2 таблицы
    + person
       * id (целый тип, первичный ключ)
@@ -25,4 +25,16 @@
       * country (строковый тип)
       * city (строковый тип)
       * address (строковый тип)
+
+       | id | country | city | address |
+       | ---| ---     | ---  | ---     |
+ * Создаем тестовые данные в обоих таблицах (минимум по 10 записей)
+ * Таблица person обязательно должна содержать записи, которые ссылаются на таблицу address
+ * Играем с SQL. Попробовать запросы:
+   + INSERT
+   + UPDATE
+   + DELETE
+   + TRUNCATE
+   + INSERT REPLACE
+   + MODIFY TABLE
 
