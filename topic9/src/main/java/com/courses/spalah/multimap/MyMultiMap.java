@@ -52,6 +52,7 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
             if (value.contains(v)) {
                 value.remove(v);
                 map.put(k, value);
+                if (value.size()==0) removeAll(k);
                 b = true;
             }
         }
@@ -76,7 +77,11 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
 
     @Override
     public int size() {
-        return map.size();
+        int size=0;
+        for (Map.Entry<K, Collection<V>> entry : map.entrySet()) {
+            size+=entry.getValue().size();
+        }
+        return size;
     }
 
     private Collection<V> all() {
