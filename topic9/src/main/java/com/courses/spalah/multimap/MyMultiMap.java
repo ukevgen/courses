@@ -7,15 +7,12 @@ import java.util.*;
  */
 public class MyMultiMap<K, V> implements MultiMap<K, V> {
     private Collection<V> value;
-    private HashMap<K, Collection<V>> map;
-
-    public MyMultiMap() {
-        this.map = new HashMap<K, Collection<V>>();
-    }
+    private HashMap<K, Collection<V>> map = new HashMap<K, Collection<V>>();
 
     @Override
     public boolean put(K k, V v) {
         if (map.containsKey(k)) {
+            value = map.get(k);
             value.add(v);
             map.put(k, value);
 
@@ -31,32 +28,35 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
     public Collection<V> get(K k) {
         if (map.containsKey(k))
             return map.get(k);
-        else
-            return new ArrayList<V>();
+        else {
+            value.clear();
+            return value;
+        }
     }
 
     @Override
     public Collection<V> removeAll(K k) {
-        Collection<V> list = map.get(k);
-        map.remove(k);
-        return list;
+        if (map.containsKey(k)) {
+            Collection<V> list = map.remove(k);
+            return list;
+        } else
+            return new ArrayList<V>();
     }
 
     @Override
     public boolean remove(K k, V v) {
         boolean b = false;
-        for (Map.Entry<K, Collection<V>> entry : map.entrySet()) {
-            if (entry.getKey().equals(k)) {
-                value = entry.getValue();
-                if (value.contains(v)) {
-                    value.remove(v);
-                    map.put(k, value);
-                    b = true;
-                }
+        // for (Map.Entry<K, Collection<V>> entry : map.entrySet()) {
+        if (map.containsKey(k)) {
+            value = map.get(k);
+            if (value.contains(v)) {
+                value.remove(v);
+                map.put(k, value);
+                b = true;
             }
         }
-        return b;
 
+        return b;
     }
 
     @Override
