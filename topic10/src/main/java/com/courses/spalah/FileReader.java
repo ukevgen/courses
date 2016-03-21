@@ -1,13 +1,15 @@
 package com.courses.spalah;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 
 /**
  * @author Ievgen Tararaka
  */
 public class FileReader {
-    public String pathToFile;
+    private String pathToFile;
 
     public FileReader(String pathToFile) {
         this.pathToFile = pathToFile;
@@ -19,9 +21,8 @@ public class FileReader {
      * @return content of file
      */
     public String readFile() {
-
-        try (BufferedReader in = new BufferedReader(new java.io.FileReader(
-                "F:\\JavaLesson\\courses\\topic10\\src\\test\\resources\\"+pathToFile))) {
+        URL url = Thread.currentThread().getContextClassLoader().getResource(getPathToFile());
+        try (BufferedReader in = new BufferedReader(new java.io.FileReader(new File(url.toURI())))) {
             StringBuilder sb = new StringBuilder();
             String line = in.readLine();
             while (line != null) {
@@ -29,7 +30,7 @@ public class FileReader {
                 line = in.readLine();
             }
             return sb.toString();
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
             return "";
         }
@@ -45,21 +46,24 @@ public class FileReader {
     }
 
     public boolean inputText(String text) {
-        try (Writer writer = new FileWriter("F:\\JavaLesson\\courses\\topic10\\src\\test\\resources\\"+pathToFile,true)) {
+        URL url = Thread.currentThread().getContextClassLoader().getResource(getPathToFile());
+        try (Writer writer = new FileWriter(new File(url.toURI()), true)) {
             writer.write(text);
             writer.flush();
             return true;
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
             return false;
         }
     }
+
     public void clearFile() {
         FileOutputStream out = null;
+        URL url = Thread.currentThread().getContextClassLoader().getResource(getPathToFile());
         try {
-            out = new FileOutputStream("F:\\JavaLesson\\courses\\topic10\\src\\test\\resources\\"+pathToFile);
+            out = new FileOutputStream(new File(url.toURI()));
             out.write(new String().getBytes());
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         } finally {
             try {

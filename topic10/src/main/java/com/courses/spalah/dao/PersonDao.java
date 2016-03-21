@@ -63,15 +63,14 @@ public class PersonDao implements Dao<Person> {
 
     @Override
     public Person remove(Long id) {
-        if (line.containsKey(id)){
+        if (line.containsKey(id)) {
             Person person = line.get(id);
             line.remove(id);
             updateList();
             updateFile();
             return person;
 
-        }
-        else return null;
+        } else return null;
 
     }
 
@@ -97,9 +96,10 @@ public class PersonDao implements Dao<Person> {
                 separator + entity.getAddress() + ";";
         return filed;
     }
-    private void updateList(){
+
+    private void updateList() {
         list.clear();
-        for (Person p :line.values()){
+        for (Person p : line.values()) {
             list.add(makeLine(p));
         }
     }
