@@ -1,25 +1,32 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
+import javax.swing.*;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
  * @author Ievgen Tararaka
  */
+// как вынести все ошибки в одинк блок
+// как сделать инсерт незная количество столбцов и их типов (универсальный метод инсерт)
 public class Test {
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver()); // или любой другой драйвер
-        Class.forName("com.mysql.jdbc.Driver");
-
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "****"); // открытие соединения к базе
-        Statement statement = con.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM test.person");
-        int columnCount = rs.getMetaData().getColumnCount();
-        while (rs.next()) {
-            for (int i = 1; i <= columnCount; i++) {
-                System.out.println(rs.getString(i));
-            }
+    public static void main(String[] args) {
+        try {
+            Dbo dbo = new Dbo("localhost:3306","person", "root", "");
+            dbo.dboConnection();
+            dbo.findCars();
+            //ResultSet rs = dbo.makeSelect(dbo.selectAll());
+            DatabaseTableModel dbm = new DatabaseTableModel(false);
+            JTable table = new JTable(dbm);
+            JFrame frame = new JFrame("INFO");
+            frame.setSize(400, 300);
+            frame.getContentPane().add(new JScrollPane(table));
+            frame.show();
+            //dbm.setDataSource(rs);
+            //rs.close();
+            ResultSet rs=dbo.findCars();
+            dbm.setDataSource(rs);
+            dbo.closeConnection();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
