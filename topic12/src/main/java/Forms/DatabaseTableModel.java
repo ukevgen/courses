@@ -1,3 +1,4 @@
+package Forms;
 
 import javax.swing.table.AbstractTableModel;
 import java.sql.ResultSet;
@@ -70,6 +71,8 @@ public class DatabaseTableModel extends AbstractTableModel {
             Class type = Class.forName(rsmd.getColumnClassName(i + 1));
             columnTypes.add(type);
         }
+        columnNames.add("Удалить");
+        columnTypes.add(columnTypes.get(0));
 // сообщаем об изменениях в структуре данных
         fireTableStructureChanged();
 // получаем данные
@@ -82,8 +85,10 @@ public class DatabaseTableModel extends AbstractTableModel {
                 else
                     row.add(rs.getObject(i + 1));
             }
+            row.add("Удалить");
             synchronized (data) {
                 data.add(row);
+
 // сообщаем о прибавлении строки
                 fireTableRowsInserted(data.size() - 1, data.size() - 1);
             }
