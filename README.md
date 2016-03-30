@@ -139,3 +139,13 @@
 
 [ДЗ #12](https://github.com/rxn1d/courses/blob/master/topic12/topic12_home_work.md)
 * Делаем приложени, которое работает с БД через JDBC
+
+13\. Практика
+* Обсуждаем предыдущее ДЗ
+* [Замечания](https://github.com/rxn1d/courses/blob/master/topic12/topic12_home_work_issues.md)
+* Доделываем [ДЗ #12](https://github.com/rxn1d/courses/blob/master/topic12/topic12_home_work.md) с учетом замечаний
+
+14\. Сервлеты
+
+[ДЗ #14]()
+
