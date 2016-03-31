@@ -19,12 +19,13 @@
 
 #### Получение списка всех обьявлений
  * `URL = /ads`
- * `HTTP METHOD = GET`
+ * `HTTP request method = GET`
  * Пример:
   ```
      Request: GET-> /ads
 
      Response:
+     Status Code: 200 OK
      {
        [
          {
@@ -53,12 +54,13 @@
   ```
 #### Поиск объявления
  * `URL = /ads?{manufacturer}&{modelName}&{yearFrom}&{yearTo}&{priceFrom}&{priceTo}`
- * `HTTP METHOD = GET`
+ * `HTTP request method = GET`
  * Пример:
  ```
-    Request: GET-> /ads?manufacturer=Mazda&modelName=Mazda3&yearFrom=2000&yearTo=2016&priceFrom=1000&priceTo=10000
+    Request: method GET-> /ads?manufacturer=Mazda&modelName=Mazda3&yearFrom=2000&yearTo=2016&priceFrom=1000&priceTo=10000
 
     Response:
+    Status Code: 200 OK
     {
       [
         {
@@ -77,7 +79,7 @@
 
 #### Добавление объявления (с сохранением в БД)
  * `URL = /ads`
- * `HTTP METHOD = POST`
+ * `HTTP request method = POST`
  * Пример:
   ```
      Request: POST-> /ads
@@ -93,6 +95,12 @@
        }
 
      Response:
-       {}
+     Status Code: 200 OK
+     {}
   ```
+
+<br>* Сериализацию\десериализацию можно делать с помощью внешних бибилиотек
+<br>* Зависимости на внешние библиотеки добавляем в pom.xml
+<br>* Веб форма не обязательна
+<br>* Приложение запускаем на Tomcat'е
 
