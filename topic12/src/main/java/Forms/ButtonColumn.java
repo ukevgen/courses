@@ -21,18 +21,8 @@ public class ButtonColumn extends AbstractCellEditor
     private Object editorValue;
     private boolean isButtonColumnEditor;
 
-    /**
-     * Create the ButtonColumn to be used as a renderer and editor. The
-     * renderer and editor will automatically be installed on the TableColumn
-     * of the specified column.
-     *
-     * @param table  the table containing the button renderer/editor
-
-     * @param column the column to which the button renderer/editor is added
-     */
     public ButtonColumn(JTable table, int column) {
         this.table = table;
-        this.action = action;
 
         renderButton = new JButton();
         editButton = new JButton();
@@ -48,20 +38,10 @@ public class ButtonColumn extends AbstractCellEditor
     }
 
 
-    /**
-     * Get foreground color of the button when the cell has focus
-     *
-     * @return the foreground color
-     */
+
     public Border getFocusBorder() {
         return focusBorder;
     }
-
-    /**
-     * The foreground color of the button when the cell has focus
-     *
-     * @param focusBorder the foreground color
-     */
     public void setFocusBorder(Border focusBorder) {
         this.focusBorder = focusBorder;
         editButton.setBorder(focusBorder);
@@ -71,11 +51,6 @@ public class ButtonColumn extends AbstractCellEditor
         return mnemonic;
     }
 
-    /**
-     * The mnemonic to activate the button when the cell has focus
-     *
-     * @param mnemonic the mnemonic
-     */
     public void setMnemonic(int mnemonic) {
         this.mnemonic = mnemonic;
         renderButton.setMnemonic(mnemonic);
@@ -140,12 +115,6 @@ public class ButtonColumn extends AbstractCellEditor
         return renderButton;
     }
 
-    //
-//  Implement ActionListener interface
-//
-    /*
-     *	The button has been pressed. Stop editing and invoke the custom Action
-	 */
     public void actionPerformed(ActionEvent e) {
         int row = table.convertRowIndexToModel(table.getEditingRow());
         fireEditingStopped();
@@ -159,14 +128,6 @@ public class ButtonColumn extends AbstractCellEditor
         action.actionPerformed(event);
     }
 
-    //
-//  Implement MouseListener interface
-//
-    /*
-	 *  When the mouse is pressed the editor is invoked. If you then then drag
-	 *  the mouse to another cell before releasing it, the editor is still
-	 *  active. Make sure editing is stopped when the mouse is released.
-	 */
     public void mousePressed(MouseEvent e) {
         System.out.println("Запись удалена");
         if (table.isEditing()

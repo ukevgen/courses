@@ -1,26 +1,28 @@
 package Query;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 /**
  * Created by Администратор on 29.03.2016.
  */
-public class Request {
-    private static final String findCars = "\"SELECT\" +\n" +
-            "                \"  t1.CAR_NAME,\" +\n" +
-            "                \"  t2.MANUFACTURER,\" +\n" +
-            "                \"  t2.YEAR_OUT,\" +\n" +
-            "                \"  t2.VIN,\" +\n" +
-            "                \"  t2.DESCRIPTION,\" +\n" +
-            "                \"  t1.PRICE,\" +\n" +
-            "                \"  concat(t2.NAME,' ',t3.PHONE) as CONTACT\" +\n" +
-            "                \" \" +\n" +
-            "                \"FROM advertisement AS t1\" +\n" +
-            "                \"  JOIN cars AS t2 ON t1.ID = t2.ID\" +\n" +
-            "                \"  JOIN owner AS t3 ON t2.NAME = t3.NAME\" +\n" +
-            "                \" \" +\n" +
-            "                \"WHERE CAR_NAME LIKE ? \" +\n" +
-            "                \"      AND MANUFACTURER LIKE ? \" +\n" +
-            "                \"      AND YEAR_OUT BETWEEN ? AND ? \" +\n" +
-            "                \"      AND PRICE BETWEEN ? AND ? \";\n";
+public final class Request {
+    private static final String findCars = "SELECT +\n" +
+            "  t1.CAR_NAME,\n" +
+            "  t2.MANUFACTURER,\n" +
+            "  t2.YEAR_OUT,\n" +
+            "  t2.VIN,\n" +
+            "  t2.DESCRIPTION,\n" +
+            "  t1.PRICE,\n" +
+            "  concat(t2.NAME,' ',t3.PHONE) as CONTACT\n" +
+
+            "FROM advertisement AS t1\n" +
+            "  JOIN cars AS t2 ON t1.ID= t2.ID\n" +
+            "  JOIN owner AS t3 ON t2.NAME = t3.NAME\n" +
+
+            "WHERE CAR_NAME LIKE ? " +
+            "      AND MANUFACTURER LIKE ? " +
+            "      AND YEAR_OUT BETWEEN ? AND ? " +
+            "      AND PRICE BETWEEN ? AND ? ";
 
     private static final String selectAll = "SELECT\n" +
             "  advertisement.CAR_NAME,\n" +
