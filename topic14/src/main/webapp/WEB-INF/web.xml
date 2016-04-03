@@ -4,6 +4,7 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
     <context-param>
         <param-name>name</param-name>
         <param-value>value</param-value>
@@ -11,13 +12,13 @@
 
     <servlet>
         <servlet-name>test</servlet-name>
-        <servlet-class>com.courses.spalah.TestGenericServlet</servlet-class>
+        <servlet-class>com.courses.spalah.TestHttpServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>test</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/ads</url-pattern>
     </servlet-mapping>
 
 </web-app>
