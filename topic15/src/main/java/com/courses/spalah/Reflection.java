@@ -82,7 +82,92 @@ public class Reflection {
         instance = constructor.newInstance(1, 1, "", false);  // создание обьекта
     }
 
-    public static void fields() {
+    public static void fields() throws NoSuchFieldException, IllegalAccessException {
+        Class clazz = SampleClass.class;
+        Field[] fields = clazz.getFields(); // получение всех филдов класса
+        SampleClass instance = new SampleClass();
 
+        Field concreateField = clazz.getField("publicLong"); // получение конкретного филда класса по его имени
+
+        for (Field f : fields) {
+            System.out.println(f.getName()); // имя филда
+        }
+
+        long value = (long) concreateField.get(instance); // получение значения поля
+        concreateField.set(instance, value + 1); // присвоение полю нового значения
+
+        Field staticField = clazz.getField("static_char"); // статическое поле
+        char char_val = (char) staticField.get(null); // получение значения статического поля
+    }
+
+    public static void methods() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class clazz = SampleClass.class;
+        Method[] methods = clazz.getMethods(); // получение всех методов класса
+        SampleClass instance = new SampleClass();
+
+        for (Method m : methods) {
+            m.getParameterTypes(); // получение параметров метода
+            m.getReturnType(); // получение типа возвращаемого значения
+        }
+
+        Method method = clazz.getMethod("setPrivateBoolean", boolean.class); // получение метода по имени и аргументам
+
+        Method methodWithoutParams = clazz.getMethod("toString", null);
+        // получение метода без аргументов
+
+        Method staticMethod = clazz.getMethod("newInstance", null); // получение статического метода без аргуметов
+
+        method.invoke(instance, true); // вызов метода у экземпляра instance
+        SampleClass newInstance = (SampleClass) staticMethod.invoke(null, null); // вызов статического метода без параметров
+    }
+
+    public static void privateMethods() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class clazz = SampleClass.class;
+        Method[] methods = clazz.getDeclaredMethods(); // получение всех методов класса, включая private
+        SampleClass instance = new SampleClass();
+
+        Method privateMethod = clazz.getDeclaredMethod("isPrivateBoolean", null); // получаем метод
+        privateMethod.setAccessible(true); // делаем поле доступным
+        boolean value = (boolean) privateMethod.invoke(instance, null); // успешно вызываем приватный метод
+    }
+
+    public static void privateFields() throws NoSuchFieldException, IllegalAccessException {
+        Class clazz = SampleClass.class;
+        Field[] fields = clazz.getDeclaredFields(); // получение всех полей класса, включая приватные
+        SampleClass instance = new SampleClass();
+
+        Field privateField = clazz.getDeclaredField("privateBoolean");
+        privateField.setAccessible(true); // делаем поле доступным
+        boolean value = (boolean) privateField.get(instance); // берем значение у приватного поля
+    }
+
+    public static void annotations() throws NoSuchMethodException {
+        Class clazz = SampleClass.class;
+        Annotation[] annotations = clazz.getAnnotations(); // массив всех аннотаций на классе
+
+        for (Annotation a : annotations) {
+            if (a instanceof SampleAnnotation) {
+                ((SampleAnnotation) a).number(); // получение значений
+                ((SampleAnnotation) a).value();
+            }
+        }
+
+        Annotation annotation = clazz.getAnnotation(SampleAnnotation.class); // получение аннотаций по типу
+        if (annotation instanceof SampleAnnotation) {
+            ((SampleAnnotation) annotation).number();
+            ((SampleAnnotation) annotation).value();
+        }
+
+        Method[] methods = clazz.getDeclaredMethods(); // получаем методы
+        for (Method m : methods) {
+            for (Annotation a : m.getAnnotations()) { // берем аннотации у метода
+                if (a instanceof Deprecated) {
+                    // чет с ними делаем
+                }
+            }
+        }
+
+        Method method =clazz.getMethod("isPrivateBoolean", null); // берем метод по имени и агрументам
+        Annotation annotation1 = method.getAnnotation(SampleAnnotation.class); // берем у него аннотацию
     }
 }
