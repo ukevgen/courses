@@ -170,4 +170,16 @@ public class Reflection {
         Method method = clazz.getMethod("isPrivateBoolean", null); // берем метод по имени и агрументам
         Annotation annotation1 = method.getAnnotation(SampleAnnotation.class); // берем у него аннотацию
     }
+
+    public static void classloading() {
+        ClassLoader classLoader = Reflection.class.getClassLoader(); // получаем ClassLoader
+
+        try {
+            Class clazz = classLoader.loadClass("com.courses.spalah.SampleClass"); // загружаем класс
+            System.out.println("aClass.getName() = " + clazz.getName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
