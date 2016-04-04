@@ -167,7 +167,7 @@ public class Reflection {
             }
         }
 
-        Method method =clazz.getMethod("isPrivateBoolean", null); // берем метод по имени и агрументам
+        Method method = clazz.getMethod("isPrivateBoolean", null); // берем метод по имени и агрументам
         Annotation annotation1 = method.getAnnotation(SampleAnnotation.class); // берем у него аннотацию
     }
 }

@@ -15,5 +15,6 @@ import java.lang.annotation.Target;
 public @interface SampleAnnotation {
     // разрешены только примитивные типы и их массивы
     String value() default ""; // стринговый параметр с дефолтным значением
+
     int number(); // интовый параметр
 }
