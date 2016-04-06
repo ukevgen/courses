@@ -4,7 +4,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * @author Ievgen Tararaka
@@ -29,5 +32,10 @@ public class SimpleCalculatorTest {
     @Test
     public void testDividing() {
         assertEquals(0.25, SimpleCalculator.calculate('/', 2, 8), 0.001); // тут у нас закралась ошибочка
+    }
+
+    @Test
+    public void testMatcher() {
+        assertThat(0.25, not(is(SimpleCalculator.calculate('/', 2, 8))));
     }
 }
