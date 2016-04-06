@@ -28,6 +28,6 @@ public class SimpleCalculatorTest {
 
     @Test
     public void testDividing() {
-        assertEquals(0.25, SimpleCalculator.calculate('/', 2, 8), 0.001);
+        assertEquals(0.25, SimpleCalculator.calculate('/', 2, 8), 0.001); // тут у нас закралась ошибочка
     }
 }
