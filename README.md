@@ -172,5 +172,5 @@
 * Юнит тестирование
 * Разбор предыдущих ДЗ в классе
 
-[ДЗ #15](https://github.com/rxn1d/courses/blob/master/topic16/topic16_home_work.md)
+[ДЗ #16](https://github.com/rxn1d/courses/blob/master/topic16/topic16_home_work.md)
 * Покрываем тестами ваше веб-приложение
