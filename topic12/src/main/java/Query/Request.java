@@ -1,6 +1,5 @@
 package Query;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 
 /**
  * Created by Администратор on 29.03.2016.

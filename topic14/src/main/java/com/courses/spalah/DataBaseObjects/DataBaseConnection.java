@@ -63,4 +63,39 @@ public class DataBaseConnection {
         pr.setInt(6, intList.get(3));
         return pr.executeQuery();
     }
+
+    public boolean addRow(ArrayList<String> arrayList) throws SQLException {
+        con = myConnection();
+        sql = query.getMaxId();
+        ResultSet resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        int id = resultSet.getInt(1);
+        resultSet.close();
+        sql = query.getUpdateAdvertisement();
+        PreparedStatement pr = con.prepareStatement(sql);
+        pr.setString(1, arrayList.get(1));
+        pr.setInt(2, Integer.parseInt(arrayList.get(5)));
+        pr.setInt(3, id);
+        pr.executeQuery();
+        pr.close();
+        sql=query.getUpdateOwner();
+        pr = con.prepareStatement(sql);
+        pr.setString(1, arrayList.get(7));
+        pr.setString(2, arrayList.get(7));
+        pr.setString(2, arrayList.get(6));
+        pr.setInt(4, id);
+        pr.executeQuery();
+        pr.close();
+        sql=query.getUpdateCars();
+        pr = con.prepareStatement(sql);
+        pr.setInt(1, id);
+        pr.setString(2, arrayList.get(7));
+        pr.setString(3, arrayList.get(0));
+        pr.setInt(4, Integer.parseInt(arrayList.get(2)));
+        pr.setString(5, arrayList.get(3));
+        pr.setString(6, arrayList.get(4));
+        pr.executeQuery();
+        pr.close();
+        return true;
+    }
 }

@@ -11,13 +11,13 @@
     </context-param>
 
     <servlet>
-        <servlet-name>test</servlet-name>
-        <servlet-class>com.courses.spalah.TestHttpServlet</servlet-class>
+        <servlet-name>ukEvgenServlet</servlet-name>
+        <servlet-class>com.courses.spalah.MyHttpServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>test</servlet-name>
+        <servlet-name>ukEvgenServlet</servlet-name>
         <url-pattern>/ads</url-pattern>
     </servlet-mapping>
 
