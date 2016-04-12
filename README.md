@@ -176,3 +176,6 @@
 * Покрываем тестами ваше веб-приложение
 
 17\. Паттерны проектирования
+
+[ДЗ #17](https://github.com/rxn1d/courses/blob/master/topic17/topic17_home_work.md)
+* Реализуем паттерн Memento для рулетки
