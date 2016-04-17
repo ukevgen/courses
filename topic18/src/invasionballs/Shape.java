@@ -10,11 +10,11 @@ import java.awt.Color;
 import java.awt.Point;
 
 /**
- *
  * @author User
  */
-public interface   Shape {
-           
-         public void draw(); 
-         public Color getColor();
+public interface Shape {
+
+    public void init();
+
+    public Color getColor();
 }
