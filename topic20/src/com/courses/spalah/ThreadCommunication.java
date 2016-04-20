@@ -13,11 +13,13 @@ public class ThreadCommunication {
         Thread thread = new Thread(new WaitingWorker(obj), "worker#1");
         thread.start();
 
-        System.out.println("MAIN THREAD SLEEP FOR 1 SEC");
         Thread.sleep(1000);
+        System.out.println("MAIN THREAD SLEEP FOR 1 SEC");
 
         synchronized (obj) {
             obj.notify();
+            Thread.sleep(2000);
+            System.out.println("SLEEP AFTER NOTIFY 2 SEC");
         }
     }
 }
@@ -57,6 +59,7 @@ class WaitingWorker implements Runnable {
         synchronized (object) {
             System.out.println(Thread.currentThread().getName() + " WAITING");
             try {
+                Thread.sleep(10000);
                 object.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
