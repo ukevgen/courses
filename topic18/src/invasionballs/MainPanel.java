@@ -32,7 +32,11 @@ public class MainPanel extends JPanel {
 
                 int xPosition = e.getX();
                 int yPosition = e.getY();
-                ballsList.add(new Ball(xPosition, yPosition));
+                Ball ball = new Ball(xPosition, yPosition);
+                creatThread(ThreadType.COLOR, ball);
+                creatThread(ThreadType.VEKTOR, ball);
+                ballsList.add(ball);
+
             }
         });
     }
@@ -45,9 +49,7 @@ public class MainPanel extends JPanel {
             g.setColor(ball.getColor());
             g.fillOval(ball.getxPosition() - radius / 2, ball.getyPosition() - radius / 2, radius, radius);
             moveBall(ball);
-
         }
-        //
     }
 
     public void animatePanel() {
@@ -76,5 +78,20 @@ public class MainPanel extends JPanel {
         ball.setxPosition(xPosition);
         ball.setyPosition(yPosition);
 
+    }
+
+    private void creatThread(ThreadType type, Ball ball) {
+        if (type.equals(ThreadType.COLOR)) {
+            MyThread p1 = new MyThread();
+            Thread thread = new Thread(p1);
+            thread.start();
+            p1.setColor(ball);
+        } else if (type.equals(ThreadType.VEKTOR)) {
+            MyThread p2 = new MyThread();
+            Thread thread = new Thread(p2);
+            thread.start();
+            p2.setVektor(ball);
+        } else
+            System.out.println("type missmuch");
     }
 }

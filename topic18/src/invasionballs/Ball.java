@@ -15,9 +15,7 @@ import java.util.Random;
 public class Ball implements Shape {
     private static final int MINRADIUS = 5;
     private static final int MAXRADIUS = 60;
-    private static final int COLORRANGE = 256;
-    private static final int SPEED_VECTORX=15;
-    private static final int SPEED_VECTORY=20;
+
     private int xPosition;
     private int yPosition;
     private Color color;
@@ -36,12 +34,7 @@ public class Ball implements Shape {
     public void init() {
         Random random = new Random();
         r = random.nextInt(MAXRADIUS) + MINRADIUS;
-        int colorRed = random.nextInt(COLORRANGE);
-        int colorBlack = random.nextInt(COLORRANGE);
-        int colorGreen = random.nextInt(COLORRANGE);
-        xInc = random.nextInt(SPEED_VECTORX) - random.nextInt(SPEED_VECTORX);
-        yInc = random.nextInt(SPEED_VECTORY) - random.nextInt(SPEED_VECTORY);
-        color = new Color(colorRed, colorBlack, colorGreen);
+
     }
 
     public int getR() {
@@ -85,5 +78,7 @@ public class Ball implements Shape {
         this.yInc = yInc;
     }
 
-
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

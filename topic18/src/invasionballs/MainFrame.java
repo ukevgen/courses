@@ -23,7 +23,6 @@ public class MainFrame extends JFrame {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         gd.setFullScreenWindow(this);
 
-
     }
 }
 
