@@ -1,4 +1,4 @@
-package home.Sort;
+package useJavaFx.Sort;
 
 import java.util.Arrays;
 
