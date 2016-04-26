@@ -18,7 +18,7 @@ public class ButtonStart extends MainButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        super.update();
+
         if (lock.isWait()) {
             System.out.println("lock is true. Start pressed");
             synchronized (lock) {
