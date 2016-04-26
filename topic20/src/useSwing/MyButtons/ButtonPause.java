@@ -19,6 +19,7 @@ public class ButtonPause extends MainButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.update();
         synchronized (lock) {
             lock.setWait(true);
             System.out.println("lock = true");

@@ -22,7 +22,7 @@ public class ButtonCreat extends MainButton implements ActionListener, Runnable 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        super.update();
         for (MainPanel mp : panels) {
             mp.setArray(creatArray());
         }
@@ -42,5 +42,6 @@ public class ButtonCreat extends MainButton implements ActionListener, Runnable 
         }
         return array;
     }
+
 
 }

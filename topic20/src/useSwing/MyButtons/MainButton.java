@@ -3,6 +3,7 @@ package useSwing.MyButtons;
 import useSwing.AllFrame.MainPanel;
 import useSwing.sortThread.Lock;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -20,5 +21,11 @@ public abstract class MainButton {
     public MainButton(ArrayList<MainPanel> panels, Lock lock) {
         this.panels = panels;
         this.lock = lock;
+    }
+
+    protected void update() {
+        for (JPanel pl : panels) {
+            pl.repaint();
+        }
     }
 }

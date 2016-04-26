@@ -14,7 +14,7 @@ public class SortThread {
             public void run() {
                 MyChart main = new MyChart();
                 main.init();
-                main.repaint();
+               // main.repaint();
             }
         });
     }

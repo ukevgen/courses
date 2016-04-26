@@ -29,13 +29,12 @@ public class MainPanel extends JPanel {
         int height = getHeight();
         //(ось х, отступ от верха панели, ширина столбца, высота столбца)
         if (array != null) {
+            g.setColor(getColor());
             for (int i = 0; i < array.length; i++) {
                 Rectangle r = new Rectangle(NEXT * i, height - array[i], 10, array[i]);
                 g.fillRect(r.x, r.y, r.width, r.height);
             }
         }
-        this.repaint();
-
     }
 
 
