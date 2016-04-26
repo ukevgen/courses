@@ -1,20 +1,22 @@
-package useSwing;
+package useSwing.sortThread;
 
 import useSwing.AllFrame.MyChart;
-
 import javax.swing.*;
 
 /**
- * Created by Администратор on 24.04.2016.
+ * Created by Администратор on 26.04.2016.
  */
-public class NewTry {
+public class SortThread {
+
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-             MyChart main = new MyChart();
+                MyChart main = new MyChart();
                 main.init();
-
+                main.repaint();
             }
         });
     }
+
 }
