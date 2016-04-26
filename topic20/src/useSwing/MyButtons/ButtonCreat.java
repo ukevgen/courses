@@ -19,7 +19,6 @@ public class ButtonCreat extends MainButton implements ActionListener, Runnable 
         super(panels);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         super.update();

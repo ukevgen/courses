@@ -20,7 +20,7 @@ public class ButtonStart extends MainButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (lock.isWait()) {
-            System.out.println("lock is true. Start pressed");
+            System.out.println("Start pressed");
             synchronized (lock) {
                 lock.setWait(false);
                 lock.notifyAll();
