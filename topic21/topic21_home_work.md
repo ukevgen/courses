@@ -1,7 +1,7 @@
 ## Домашнее задание №21
 
 ### Пробуем проходить [Java-junior тесты на quizful](http://www.quizful.net/job-role/junior-java-developer)
- * по 1 тесту из каждой категории, включая SQL
+ * По 1 тесту из каждой категории, включая SQL
 
 ### Модифицируем web приложение из [ДЗ #14](https://github.com/rxn1d/courses/blob/master/topic14/topic14_home_work.md) под работу с
 [Hibernate](http://hibernate.org/orm/)
