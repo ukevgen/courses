@@ -39,12 +39,12 @@ public class MyChart extends JFrame {
         JButton b3 = new JButton("Pause");
 
         ButtonCreat bc = new ButtonCreat(panels);
-        ButtonPause bp = new ButtonPause(panels, lock);
         ButtonStart bs = new ButtonStart(panels, lock);
+        ButtonPause bp = new ButtonPause(panels, lock);
 
         b1.addActionListener(bc);
-        b2.addActionListener(bp);
-        b3.addActionListener(bs);
+        b2.addActionListener(bs);
+        b3.addActionListener(bp);
 
         Button b4 = new Button("Clear");
 

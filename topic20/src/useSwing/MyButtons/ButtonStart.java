@@ -3,11 +3,11 @@ package useSwing.MyButtons;
 import useSwing.AllFrame.MainPanel;
 import useSwing.sortThread.Lock;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import useSwing.AllFrame.MainPanel;
+
+import static useSwing.swingSort.BubbleSort.bubbleSort;
 
 
 /**
@@ -29,10 +29,21 @@ public class ButtonStart extends MainButton implements ActionListener {
                 lock.notifyAll();
             }
         } else {
-            for (JPanel p: panels){
 
+            for (MainPanel p : panels) {
+                // p.setArray(bubbleSort(p.getArray()));
+                p.setArray(testChanger(p.getArray()));
             }
         }//"создаем потоки для сортировки"}
     }
+
+    private int[] testChanger(int[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] += 2;
+        }
+        return array;
+    }
+
 
 }

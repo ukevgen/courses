@@ -4,7 +4,7 @@ package useSwing.swingSort;
  * Created by Администратор on 22.04.2016.
  */
 public final class BubbleSort {
-    public static void bubbleSort(int[] unsorted) {
+    public static int [] bubbleSort(int[] unsorted) {
 
         boolean swapped = true;
         while (swapped) {
@@ -19,5 +19,6 @@ public final class BubbleSort {
                 }
             }
         }
+        return unsorted;
     }
 }

@@ -21,7 +21,6 @@ public class ButtonCreat extends MainButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        super.update();
         for (MainPanel mp : panels) {
             mp.setArray(creatArray());
         }
