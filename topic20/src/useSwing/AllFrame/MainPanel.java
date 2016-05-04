@@ -37,7 +37,6 @@ public class MainPanel extends JPanel {
         }
     }
 
-
     private Color getColor() {
         Random random = new Random();
         int colorRed = random.nextInt(COLORRANGE);
@@ -51,6 +50,9 @@ public class MainPanel extends JPanel {
         this.array = array;
     }
 
+    public int[] getArray() {
+        return array;
+    }
 }
 
 

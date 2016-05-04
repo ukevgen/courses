@@ -3,7 +3,7 @@ package com.rxn1d.courses.service;
 import com.rxn1d.courses.model.Car;
 import com.rxn1d.courses.model.CarParking;
 
-public class MyCarParkingSerializerJSON implements CarParkingSerializer {
+class MyCarParkingSerializerJSON implements CarParkingSerializer {
     public String serialize(CarParking carParking) {
         StringBuilder builder = new StringBuilder();
         builder.append("{\n");

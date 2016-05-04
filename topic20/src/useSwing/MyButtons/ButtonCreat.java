@@ -11,7 +11,7 @@ import java.util.Random;
  * Created by Администратор on 26.04.2016.
  */
 
-public class ButtonCreat extends MainButton implements ActionListener, Runnable {
+public class ButtonCreat extends MainButton implements ActionListener {
 
     private static final int SIZE = 100;
 
@@ -25,12 +25,6 @@ public class ButtonCreat extends MainButton implements ActionListener, Runnable 
         for (MainPanel mp : panels) {
             mp.setArray(creatArray());
         }
-    }
-
-    @Override
-    public void run() {
-
-        System.out.println("Creat New Thread");
     }
 
     private int[] creatArray() {

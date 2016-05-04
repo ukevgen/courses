@@ -5,7 +5,7 @@ import com.rxn1d.courses.model.CarParking;
 
 import java.util.ArrayList;
 
-public class MyCarParkingDeserializerJSON implements CarParkingDeserializer {
+class MyCarParkingDeserializerJSON implements CarParkingDeserializer {
     public CarParking deserialize(String serializedCarParking) {
 
         // парсим строку к нужному мне формату и создаем арейлист масивов ключ: значение
