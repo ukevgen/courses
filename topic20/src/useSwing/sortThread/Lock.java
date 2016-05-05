@@ -10,11 +10,11 @@ public class Lock {
         this.wait = false;
     }
 
-    public boolean isWait() {
+    public  boolean isWait() {
         return wait;
     }
 
-    public void setWait(boolean wait) {
+    public  void setWait(boolean wait) {
         this.wait = wait;
     }
 }

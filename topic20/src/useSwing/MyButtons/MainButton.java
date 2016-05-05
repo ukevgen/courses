@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public abstract class MainButton {
 
     protected ArrayList<MainPanel> panels;
-    protected Lock lock;
+    protected static Lock lock;
 
     public MainButton(ArrayList<MainPanel> panels) {
         this.panels = panels;
