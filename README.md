@@ -228,3 +228,8 @@
 [ДЗ #21](https://github.com/rxn1d/courses/blob/master/topic21/topic21_home_work.md)
 * Решаем тесты
 * Знакомимся с Hibernate
+
+22\. Ant и Maven
+
+[ДЗ #22](https://github.com/rxn1d/courses/blob/master/topic22/topic22_home_work.md)
+* Ant и Maven. Конфигурируем билд.
