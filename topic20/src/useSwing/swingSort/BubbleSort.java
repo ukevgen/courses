@@ -14,16 +14,20 @@ public final class BubbleSort extends Array implements Runnable {
     private void bubbleSort() throws InterruptedException {
 
         boolean swapped = true;
+
         while (swapped) {
+
             swapped = false;
-            for (int i = 1; i < array.length; i++) {
-                int temp = 0;
-                if (array[i - 1] > array[i]) {
-                    temp = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = temp;
-                    swapped = true;
-                    Thread.sleep(20);
+            if (!lock.isWait()) {
+                for (int i = 1; i < array.length; i++) {
+                    int temp = 0;
+                    if (array[i - 1] > array[i]) {
+                        temp = array[i - 1];
+                        array[i - 1] = array[i];
+                        array[i] = temp;
+                        swapped = true;
+                        Thread.sleep(2);
+                    }
                 }
             }
         }
@@ -32,15 +36,10 @@ public final class BubbleSort extends Array implements Runnable {
     @Override
     public void run() {
 
-        while (true) {
-            if (!lock.isWait()) {
-                try {
-                    System.out.println(lock.isWait());
-                    bubbleSort();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+        try {
+            bubbleSort();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 

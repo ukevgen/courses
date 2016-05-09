@@ -1,0 +1,15 @@
+<hibernate-mapping>
+    <class name=«com.courses.spalah.Customer.Ad» table=«advertisement»>
+    <id column=«ID» name=«id» type=«java.lang.INT»>
+    <generator class=«increment»/>
+</id>
+<property column=«CAR_NAME» name=«CAR_NAME» type=«java.lang.String»/>
+<property column=«PRICE» name=«PRICE» type=«java.lang.String»/>
+
+<set name=«ad» table=«advertisement» lazy=«false»>
+<key column=«ID»/>
+<many-to-many column=«ID» class=«com.courses.spalah.Customer.Car»/>
+        </set>
+
+        </class>
+        </hibernate-mapping>

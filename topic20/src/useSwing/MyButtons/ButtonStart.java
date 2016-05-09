@@ -35,6 +35,7 @@ public class ButtonStart extends MainButton implements ActionListener {
             synchronized (lock) {
                 lock.setWait(false);
                 lock.notifyAll();
+                initSort();
             }
         } else {
             initSort();
@@ -49,7 +50,7 @@ public class ButtonStart extends MainButton implements ActionListener {
                             }
                         }
                         try {
-                            Thread.sleep(200);
+                            Thread.sleep(20);
                         } catch (InterruptedException e1) {
                             e1.printStackTrace();
                         }
@@ -70,6 +71,7 @@ public class ButtonStart extends MainButton implements ActionListener {
     private void initSort() {
         Thread th1 = new Thread(bubbleSort);
         th1.start();
+        System.out.println("1 call");
     }
 
     class UpdatePanel implements Runnable {
