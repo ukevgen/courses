@@ -22,9 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="jpa" />
+        <module name="native-annotations" />
+        <module name="native-xml" />
         <module name="topic10" />
         <module name="topic12" />
-        <module name="topic23" />
         <module name="topic8" />
         <module name="topic9" />
       </profile>
@@ -58,6 +60,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="jpa" target="1.5" />
+      <module name="native-annotations" target="1.5" />
+      <module name="native-xml" target="1.5" />
       <module name="topic10" target="1.8" />
       <module name="topic12" target="1.5" />
       <module name="topic14" target="1.8" />
