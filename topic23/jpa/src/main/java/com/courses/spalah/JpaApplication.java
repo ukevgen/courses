@@ -21,7 +21,7 @@ public class JpaApplication {
 
         Book book1 = new Book();
         book1.setBookName("The Seasons");
-        book1.setAuthor("Edward Young ");
+        book1.setAuthor("Edward Young");
         book1.setPublishDate(new Date(System.currentTimeMillis()));
 
         Book book2 = new Book();
