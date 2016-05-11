@@ -1,14 +1,14 @@
 package com.courses.spalah;
 
-import com.courses.spalah.domain.Book;
-import com.courses.spalah.domain.BookShelf;
-import com.courses.spalah.service.BookService;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.Date;
 import java.util.List;
+
+import com.courses.spalah.domain.Book;
+import com.courses.spalah.domain.BookShelf;
+import com.courses.spalah.service.BookService;
 
 /**
  * @author Ievgen Tararaka
