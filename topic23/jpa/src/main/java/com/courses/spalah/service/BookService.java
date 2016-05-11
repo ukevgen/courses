@@ -18,6 +18,17 @@ public class BookService {
         this.entityManager = entityManager;
     }
 
+    public Book findById(Long id) {
+        entityManager.getTransaction().begin();
+
+        Book foundBook = entityManager.find(Book.class, id);
+
+        entityManager.getTransaction().commit();
+        entityManager.close();
+
+        return foundBook;
+    }
+
     public void save(Book book) {
         entityManager.getTransaction().begin(); // вручную открываем транзакцию
         entityManager.persist(book); // сохранять сущности очень просто. Вызываем метод persist.
