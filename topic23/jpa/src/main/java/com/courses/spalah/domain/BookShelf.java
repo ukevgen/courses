@@ -14,7 +14,11 @@ public class BookShelf {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "book", orphanRemoval = true)
+
+    @Column(name = "shelf_name", nullable = false)
+    private String shelfName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "bookShelf", orphanRemoval = true)
     private Collection<Book> books = new ArrayList<Book>();
 
     public BookShelf() {
@@ -28,6 +32,13 @@ public class BookShelf {
         this.id = id;
     }
 
+    public String getShelfName() {
+        return shelfName;
+    }
+
+    public void setShelfName(String shelfName) {
+        this.shelfName = shelfName;
+    }
 
     public Collection<Book> getBooks() {
         return books;
@@ -35,5 +46,14 @@ public class BookShelf {
 
     public void setBooks(Collection<Book> books) {
         this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "BookShelf{" +
+                "id=" + id +
+                ", shelfName='" + shelfName + '\'' +
+                ", books=" + books +
+                '}';
     }
 }

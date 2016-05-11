@@ -1,6 +1,15 @@
 package com.courses.spalah.domain;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 import java.sql.Date;
 
 /**
@@ -20,7 +29,7 @@ public class Book {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -29,7 +38,7 @@ public class Book {
         this.id = id;
     }
 
-    @Column(name = "book_name")
+    @Column(name = "book_name", nullable = false)
     public String getBookName() {
         return bookName;
     }
@@ -38,7 +47,7 @@ public class Book {
         this.bookName = bookName;
     }
 
-    @Column(name = "author")
+    @Column(name = "author", nullable = false)
     public String getAuthor() {
         return author;
     }
@@ -47,7 +56,7 @@ public class Book {
         this.author = author;
     }
 
-    @Column(name = "publish_date")
+    @Column(name = "publish_date", nullable = false)
     public Date getPublishDate() {
         return publishDate;
     }
@@ -57,6 +66,7 @@ public class Book {
     }
 
     @ManyToOne
+    @JoinColumn(name = "book_shelf_id", nullable = true)
     public BookShelf getBookShelf() {
         return bookShelf;
     }
