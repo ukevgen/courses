@@ -233,3 +233,8 @@
 
 [ДЗ #22](https://github.com/rxn1d/courses/blob/master/topic22/topic22_home_work.md)
 * Ant и Maven. Конфигурируем билд.
+
+23\. ORM - Hibernate - JPA
+
+[ДЗ #23](https://github.com/rxn1d/courses/blob/master/topic23/topic23_home_work.md)
+* Приложение для управления банковскими счетом.
