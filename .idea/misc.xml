@@ -20,6 +20,12 @@
 >>>>>>> 8e14864f21b85ea2b96e474dccfeb9aaf928c387
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/topic23/native-annotations/pom.xml" />
+        <option value="$PROJECT_DIR$/topic23/native-xml/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
