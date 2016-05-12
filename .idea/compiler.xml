@@ -23,8 +23,6 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="jpa" />
-        <module name="native-annotations" />
-        <module name="native-xml" />
         <module name="topic10" />
         <module name="topic12" />
         <module name="topic8" />
