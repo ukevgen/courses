@@ -4,8 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="Customer.Ad" table="advertisement">
-        <id column="ID" name="id" type="int">
+    <class name="Customer.Car" table="cars">
+        <id column="ID" name="ID" type="int">
             <generator class="native"/>
         </id>
         <property column="NAME" name="name" type="string"/>
@@ -13,7 +13,10 @@
         <property column="YEAR_OUT" name="yearOut" type="int"/>
         <property column="VIN" name="vin" type="string"/>
         <property column="DESCRIPTION" name="description" type="string"/>
-
+       <!-- <set name="owner" lazy="false">
+            <key column="ID"/>
+            <many-to-many class="Customer.Owner"/>
+        </set>-->
     </class>
 </hibernate-mapping>
 

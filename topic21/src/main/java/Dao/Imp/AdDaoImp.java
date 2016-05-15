@@ -38,15 +38,16 @@ public class AdDaoImp implements AdDao {
     @Override
     public List getAll() throws SQLException {
         Session session = null;
-        List advertisement=null;
+        List advertisement = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from Ad");
-            advertisement =query.list();
+            //Query query = session.createQuery("from Ad");
+            Query query = session.createQuery(
+                    "select b from Ad b left join b.car car ");
+            advertisement = query.list();
             //advertisement = (List) session.createQuery("from Ad");
         } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
             System.out.println(e);
         } finally {
             if (session != null && session.isOpen()) {

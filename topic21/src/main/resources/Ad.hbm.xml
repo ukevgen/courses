@@ -10,6 +10,10 @@
         </id>
         <property column="CAR_NAME" name="CAR_NAME" type="string"/>
         <property column="PRICE" name="PRICE" type="int"/>
+        <set name="car" lazy="false">
+            <key column="ID"/>
+            <one-to-many class="Customer.Car"/>
+        </set>
 
     </class>
 </hibernate-mapping>

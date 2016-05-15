@@ -12,9 +12,7 @@ public class Main {
         //Ad ad = new Ad(55, "Test", 1000);
         List advertisement = null;
         try {
-            // Factory.getInstance().getAdDAO().addAd(ad);
-            Factory factory = new Factory();
-            advertisement = factory.getAdDAO().getAll();
+            advertisement = Factory.getInstance().getAdDAO().getAll();
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("er");
@@ -25,5 +23,6 @@ public class Main {
             Ad ad = (Ad) iterator.next();
             System.out.println(ad.toString());
         }
+
     }
 }
