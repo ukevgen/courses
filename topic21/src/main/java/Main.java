@@ -1,14 +1,11 @@
-package main.java;
-
-
-import main.java.Customer.Ad;
+import Customer.Ad;
 
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Администратор on 08.05.2016.
+ * Created by Администратор on 15.05.2016.
  */
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +20,8 @@ public class Main {
             System.out.println("er");
         }
         System.out.println("all is good");
-        Iterator iterator = advertisement.iterator();
-        while (iterator.hasNext()) {
+        Iterator iterator =advertisement.iterator();
+        while (iterator.hasNext()){
             Ad ad = (Ad) iterator.next();
             System.out.println(ad.toString());
         }

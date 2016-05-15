@@ -1,12 +1,12 @@
-package main.java.HibernateConnection;
+package HibernateConnection;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
 /**
- * Created by Администратор on 08.05.2016.
+ * Created by Администратор on 15.05.2016.
  */
 public class HibernateUtil {
-
     private static final SessionFactory sessionFactory;
     static {
         try {
@@ -21,3 +21,4 @@ public class HibernateUtil {
         return sessionFactory;
     }
 }
+

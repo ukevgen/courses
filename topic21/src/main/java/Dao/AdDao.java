@@ -1,8 +1,6 @@
-package main.java.Dao;
+package Dao;
 
-
-
-import main.java.Customer.Ad;
+import Customer.Ad;
 
 import java.sql.SQLException;
 import java.util.List;

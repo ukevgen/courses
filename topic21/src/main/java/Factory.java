@@ -1,13 +1,10 @@
-package main.java;
-
-import main.java.Dao.AdDao;
-import main.java.Dao.Imp.AdDaoImp;
+import Dao.AdDao;
+import Dao.Imp.AdDaoImp;
 
 /**
- * Created by Администратор on 08.05.2016.
+ * Created by Администратор on 15.05.2016.
  */
 public class Factory {
-
     private static AdDao adDao = null;
     private static Factory instance = null;
 
@@ -24,4 +21,5 @@ public class Factory {
         }
         return adDao;
     }
+
 }

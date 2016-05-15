@@ -1,9 +1,8 @@
-package main.java.Dao.Imp;
+package Dao.Imp;
 
-
+import Customer.Ad;
+import Dao.AdDao;
 import HibernateConnection.HibernateUtil;
-import main.java.Customer.Ad;
-import main.java.Dao.AdDao;
 import org.hibernate.Query;
 import org.hibernate.Session;
 

@@ -1,4 +1,4 @@
-package main.java.Customer;
+package Customer;
 
 /**
  * Created by Администратор on 10.05.2016.

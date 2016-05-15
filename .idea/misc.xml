@@ -7,9 +7,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/topic2/pom.xml" />
+        <option value="$PROJECT_DIR$/topic4/pom.xml" />
         <option value="$PROJECT_DIR$/topic7/pom.xml" />
-<<<<<<< HEAD
-=======
         <option value="$PROJECT_DIR$/topic8/pom.xml" />
         <option value="$PROJECT_DIR$/topic9/pom.xml" />
         <option value="$PROJECT_DIR$/topic10/pom.xml" />
@@ -17,7 +17,7 @@
         <option value="$PROJECT_DIR$/topic14/pom.xml" />
         <option value="$PROJECT_DIR$/topic16/pom.xml" />
         <option value="$PROJECT_DIR$/topic23/pom.xml" />
->>>>>>> 8e14864f21b85ea2b96e474dccfeb9aaf928c387
+        <option value="$PROJECT_DIR$/topic21/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
