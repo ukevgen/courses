@@ -50,4 +50,14 @@ public class Owner {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", fio='" + fio + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }

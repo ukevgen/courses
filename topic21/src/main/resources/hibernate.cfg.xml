@@ -25,7 +25,7 @@
         <!-- List of XML mapping files -->
         <mapping resource="Ad.hbm.xml"/>
         <mapping resource="Car.hbm.xml"/>
-        <!--<mapping resource="Owner.hbm.xml"/>-->
+        <mapping resource="Owner.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

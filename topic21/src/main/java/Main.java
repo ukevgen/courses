@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Администратор on 15.05.2016.
  */
 public class Main {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //Ad ad = new Ad(55, "Test", 1000);
         List advertisement = null;
         try {
@@ -24,5 +24,5 @@ public class Main {
             System.out.println(ad.toString());
         }
 
-    }
+    }*/
 }

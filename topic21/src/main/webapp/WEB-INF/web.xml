@@ -12,7 +12,7 @@
 
     <servlet>
         <servlet-name>ukEvgenServlet</servlet-name>
-        <servlet-class>com.courses.spalah.MyHttpServlet</servlet-class>
+        <servlet-class>java/MyHttpServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 

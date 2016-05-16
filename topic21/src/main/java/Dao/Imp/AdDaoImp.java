@@ -44,9 +44,8 @@ public class AdDaoImp implements AdDao {
             session.beginTransaction();
             //Query query = session.createQuery("from Ad");
             Query query = session.createQuery(
-                    "select b from Ad b left join b.car car ");
+                    "select b from Ad b left join b.car car left join car.owner owner");
             advertisement = query.list();
-            //advertisement = (List) session.createQuery("from Ad");
         } catch (Exception e) {
             System.out.println(e);
         } finally {

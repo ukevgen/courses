@@ -13,7 +13,7 @@ public class Car {
     private int yearOut;
     private String vin;
     private String description;
-   // private Set owner = new HashSet<>();
+    private Set owner = new HashSet<>();
     private int ID;
 
     public Car() {
@@ -68,13 +68,13 @@ public class Car {
         this.description = description;
     }
 
-    /*public Set getOwner() {
+    public Set getOwner() {
         return owner;
     }
 
     public void setOwner(Set owner) {
         this.owner = owner;
-    }*/
+    }
 
     public int getID() {
         return ID;
@@ -89,9 +89,10 @@ public class Car {
         return "Car{" +
                 "name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
-                ", yearOut='" + yearOut + '\'' +
+                ", yearOut=" + yearOut +
                 ", vin='" + vin + '\'' +
                 ", description='" + description + '\'' +
+                ", owner=" + owner.toString() +
                 ", ID=" + ID +
                 '}';
     }

@@ -13,10 +13,10 @@
         <property column="YEAR_OUT" name="yearOut" type="int"/>
         <property column="VIN" name="vin" type="string"/>
         <property column="DESCRIPTION" name="description" type="string"/>
-       <!-- <set name="owner" lazy="false">
+        <set name="owner" lazy="false">
             <key column="ID"/>
-            <many-to-many class="Customer.Owner"/>
-        </set>-->
+            <one-to-many class="Customer.Owner"/>
+        </set>
     </class>
 </hibernate-mapping>
 
