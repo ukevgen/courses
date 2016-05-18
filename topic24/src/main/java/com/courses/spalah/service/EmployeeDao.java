@@ -10,6 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  * @author Ievgen Tararaka
@@ -121,6 +122,36 @@ public class EmployeeDao {
             Query query = session.createQuery("FROM Employee E WHERE E.firstName=:name");
             query.setParameter("name", name);
             employees = query.list();
+            for (Iterator iterator =
+                 employees.iterator(); iterator.hasNext(); ) {
+                Employee employee = (Employee) iterator.next();
+                System.out.print("First Name: " + employee.getFirstName());
+                System.out.print("Last Name: " + employee.getLastName());
+            }
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return employees;
+    }
+
+    public List<Employee> findByNameWithCriteria(String name) {
+        Session session = factory.openSession();
+        Transaction tx = null;
+        List<Employee> employees = Collections.emptyList();
+        try {
+            tx = session.beginTransaction();
+            employees = session.createCriteria(Employee.class)
+                    .add(Restrictions.in("firstName", new String[]{"Fritz", "Izi", "Pk"}))
+                    .add(Restrictions.disjunction()
+                            .add(Restrictions.isNull("age"))
+                            .add(Restrictions.eq("age", new Integer(0)))
+                            .add(Restrictions.eq("age", new Integer(1)))
+                            .add(Restrictions.eq("age", new Integer(2)))
+                    ).list();
             for (Iterator iterator =
                  employees.iterator(); iterator.hasNext(); ) {
                 Employee employee = (Employee) iterator.next();
