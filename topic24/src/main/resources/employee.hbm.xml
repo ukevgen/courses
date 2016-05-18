@@ -5,12 +5,12 @@
 
 <hibernate-mapping>
     <class name="com.courses.spalah.domain.Employee" table="employee">
-        <id name="id">
+        <id name="id" column="id" type="long">
             <generator class="identity"></generator>
         </id>
 
-        <property name="firstName" column="first_name"></property>
-        <property name="lastName" column="last_name"></property>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
 
     </class>
 

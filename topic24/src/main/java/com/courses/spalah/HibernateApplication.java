@@ -13,12 +13,11 @@ public class HibernateApplication {
     public static void main(String[] args) {
         // создаем конфигурацию
         Configuration cfg=new Configuration();
-        // конфигурим с помощью XML-ки
+        // конфигурим с помощью XML-файла
         cfg.configure("hibernate.cfg.xml");
 
         // создаем фабрику сессий
         SessionFactory factory=cfg.buildSessionFactory();
-
         // создаем сессию
         Session session=factory.openSession();
 
