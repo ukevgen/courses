@@ -25,6 +25,7 @@
         <module name="jpa" />
         <module name="topic10" />
         <module name="topic12" />
+        <module name="topic24" />
         <module name="topic8" />
         <module name="topic9" />
       </profile>
@@ -67,6 +68,7 @@
       <module name="topic16" target="1.8" />
       <module name="topic2" target="1.8" />
       <module name="topic23" target="1.5" />
+      <module name="topic24" target="1.5" />
       <module name="topic4" target="1.8" />
       <module name="topic8" target="1.8" />
       <module name="topic9" target="1.8" />
