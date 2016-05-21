@@ -4,20 +4,21 @@
 http://java.sun.com/xml/ns/persistence "
              version="2.0">
     <!--Уникальное имя для нашего persistence unita-->
-    <persistence-unit name="com.courses.spalah.jpa">
+    <persistence-unit name="mytask.jpa">
         <!--Указываем JPA провайдар. Hibernate в нашем случае-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!--Наши ентити-классы-->
-        <class>com.courses.spalah.domain.Book</class>
-        <class>com.courses.spalah.domain.BookShelf</class>
+        <class>mytask.domain.Client</class>
+        <class>mytask.domain.Payment</class>
+        <class>mytask.domain.Schet</class>
 
         <!--Проперки, которые используются провайдером.-->
         <!--В данном случае указываем Hibernate коннекшн к базе-->
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibernate"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/person"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
         </properties>
     </persistence-unit>
