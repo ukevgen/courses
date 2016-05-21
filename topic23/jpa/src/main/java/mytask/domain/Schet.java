@@ -7,11 +7,11 @@
 package mytask.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
  * @author User
  */
 @Entity
@@ -27,7 +27,7 @@ public class Schet {
     private Payment payment;
 
     @Column
-    private long balance;
+    private Date date;
 
     public Schet() {
     }
@@ -48,12 +48,12 @@ public class Schet {
         this.payment = payment;
     }
 
-    public long getBalance() {
-        return balance;
+    public Date getDate() {
+        return date;
     }
 
-    public void setBalance(long balance) {
-        this.balance = balance;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class Schet {
         return "Schet{" +
                 "id=" + id +
                 ", payment=" + payment +
-                ", balance=" + balance +
+                ", balance=" + date +
                 '}';
     }
 }

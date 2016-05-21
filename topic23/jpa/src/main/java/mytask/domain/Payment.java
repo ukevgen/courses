@@ -8,6 +8,7 @@ package mytask.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,7 +20,7 @@ import java.util.Set;
 public class Payment {
     @Id
     @Column(name = "payment_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column
@@ -29,7 +30,7 @@ public class Payment {
     private long balance;
 
     @ManyToOne
-    @JoinColumn(name = "client_payment_id", nullable = false)
+    @JoinColumn(name = "client_payment_id")
     private Client client;
 
     public Payment() {

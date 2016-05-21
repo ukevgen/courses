@@ -11,26 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author User
  */
 @Entity
-@Table(name="clients")
+@Table(name = "clients")
 
 public class Client {
     @Id
     @Column(name = "clients_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column
     private String name;
     @Column
-	private String surname;
+    private String surname;
     @Column
-	private long inn;
+    private long inn;
 
     @OneToMany(mappedBy = "client")
-    private List<Payment> accounts = new ArrayList<Payment>();
+    private List<Payment> payments = new ArrayList<Payment>();
 
     public Client() {
     }
@@ -67,12 +66,12 @@ public class Client {
         this.inn = inn;
     }
 
-    public List<Payment> getAccounts() {
-        return accounts;
+    public List<Payment> getPayments() {
+        return payments;
     }
 
-    public void setAccounts(List<Payment> accounts) {
-        this.accounts = accounts;
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 
     @Override
@@ -82,7 +81,7 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", inn=" + inn +
-                ", accounts=" + accounts +
+                ", accounts=" + payments +
                 '}';
     }
 }
