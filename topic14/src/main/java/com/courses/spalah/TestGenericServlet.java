@@ -20,5 +20,4 @@ public class TestGenericServlet extends GenericServlet {
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         servletResponse.getWriter().write("<html><body>YEAH BABY</body></html>");
     }
-
 }

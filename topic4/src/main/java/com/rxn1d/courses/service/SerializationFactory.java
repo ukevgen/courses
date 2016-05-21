@@ -8,7 +8,7 @@ import com.rxn1d.courses.common.Format;
  * @author Ievgen Tararaka
  */
 public class SerializationFactory {
-    /*
+    /**
      * Необходимо реализовать логику возвращения
      * десериализатора для конкретного формата файла.
      * </p>Например вернуть реализацию CarParkingDeserializer для JSON формата
@@ -17,11 +17,8 @@ public class SerializationFactory {
      * @return имплементацию десериализатора
      */
     public static CarParkingDeserializer getDeserializer(Format format) {
-        if (format == Format.JSON)
-            return new MyCarParkingDeserializerJSON();
-        else
-            return new MyCarParkingDeserializerXML();
         // TODO - здесь будет ваша логика. Необходимо вернуть реализацию интерфейса
+        return null;
     }
 
     /**
@@ -33,12 +30,7 @@ public class SerializationFactory {
      * @return имплементацию сериализатора
      */
     public static CarParkingSerializer getSerializer(Format format) {
-        if (Format.JSON.equals(format))
-            return new MyCarParkingSerializerJSON();
-        else
-            return new MyCarParkingSerializerXML();
-
         // TODO - здесь будет ваша логика. Необходимо вернуть реализацию интерфейса
-
+        return  null;
     }
 }

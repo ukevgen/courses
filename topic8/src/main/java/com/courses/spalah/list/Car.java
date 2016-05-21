@@ -19,17 +19,15 @@ public class Car {
         return priceInDollars;
     }
 
+    public void setPriceInDollars(int priceInDollars) {
+        this.priceInDollars = priceInDollars;
+    }
+
     public String getModelName() {
         return modelName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        Car car = (Car) o;
-        if (((Car) o).getPriceInDollars() == priceInDollars && ((Car) o).getModelName().equals(modelName)) {
-            return true;
-        }
-        return false;
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
-
 }

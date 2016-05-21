@@ -1,7 +1,0 @@
-NEW_USER Jason 1001
-hello Table1
-NEW USER Elsa 1101
-sdf
-BET Elsa 500
-sdf
-PLAY_GAME
