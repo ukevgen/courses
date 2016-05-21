@@ -4,7 +4,7 @@
 http://java.sun.com/xml/ns/persistence "
              version="2.0">
     <!--Уникальное имя для нашего persistence unita-->
-    <persistence-unit name="mytask.jpa">
+    <persistence-unit name="MYTASK">
         <!--Указываем JPA провайдар. Hibernate в нашем случае-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
