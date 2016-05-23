@@ -9,11 +9,11 @@ import com.courses.spalah.track.Track;
  * @author Ievgen Tararaka
  */
 public class MusicPlayerApp {
-    public static void main(String[] args) {
-        naiveReader();
+    public void play() {
+        playNaive();
     }
 
-    public static void naiveReader() {
+    private void playNaive() {
         NaiveReader naiveReader = new NaiveReader();
         List<Track> tracks = naiveReader.getListOfAllTracks();
         System.out.println("Tracks: " + tracks);
