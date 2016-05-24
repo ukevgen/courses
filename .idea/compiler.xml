@@ -61,8 +61,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="dependency-example" target="1.5" />
-      <module name="jpa" target="1.5" />
+      <module name="dependency-example" target="1.8" />
+      <module name="jpa" target="1.8" />
       <module name="spring-ioc" target="1.5" />
       <module name="topic10" target="1.8" />
       <module name="topic12" target="1.5" />

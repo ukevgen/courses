@@ -1,6 +1,7 @@
 package com.courses.spalah.reader;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.courses.spalah.track.Track;
@@ -8,7 +9,7 @@ import com.courses.spalah.track.Track;
 /**
  * @author Ievgen Tararaka
  */
-public class NaiveReader {
+public class NaiveReader implements TrackReader{
     private static final List<Track> AVAILABLE_TRACKS = new ArrayList<>();
 
     static {
@@ -19,12 +20,29 @@ public class NaiveReader {
     }
 
     private List<Track> currentTracks = new ArrayList<>();
+    private Iterator<Track> trackIterator;
 
-    public NaiveReader() {
+    @Override
+    public void load() {
+        System.out.println("LOADING");
         currentTracks.addAll(AVAILABLE_TRACKS);
+        trackIterator = currentTracks.iterator();
     }
 
-    public List<Track> getListOfAllTracks() {
+    @Override
+    public Track next() {
+        if (trackIterator.hasNext()) {
+            return trackIterator.next();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Track> getAll() {
+        return currentTracks;
+    }
+
+    public List<Track> getCurrentTracks() {
         return currentTracks;
     }
 }

@@ -1,14 +1,16 @@
 package com.courses.spalah.reader;
 
-import java.util.List;
-
 import com.courses.spalah.track.Track;
 
+import java.util.List;
+
 /**
- * @author Ievgen Tararaka
+ * Created by Jeka on 23.05.2016.
  */
 public interface TrackReader {
-    Track getNext();
+    void load();
+
+    Track next();
 
     List<Track> getAll();
 }
