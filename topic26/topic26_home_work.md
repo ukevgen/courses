@@ -5,6 +5,7 @@
  * Изучаем Spring MVC ([reference](http://docs.spring.io/autorepo/docs/spring/4.0.x/spring-framework-reference/html/mvc.html), [на русском](http://www.spring-source.ru/articles.php))
  * Создаем небольшое REST приложение на основе Spring MVC. Имплементируем следующее REST API:
  ```
+
    REQUEST - /account
    METHOD -  GET
    BODY -
@@ -12,6 +13,7 @@
    Ожидаемый результат - список всех аккаунтов в формате JSON.
  ```
  ```
+
    REQUEST - /account/{id}
    METHOD - GET
    BODY -
@@ -19,6 +21,7 @@
    Ожидаемый результат - аккаунт по заданному id в формате JSON.
  ```
  ```
+
    REQUEST - /account
    METHOD - POST
    BODY - account в формате JSON
@@ -26,6 +29,7 @@
    Ожидаемый результат - создает новый аккаунт с параметрами, переданными в BODY.
  ```
  ```
+
    REQUEST - /account/{id}
    METHOD - PUT
    BODY - account в формате JSON
@@ -33,6 +37,7 @@
    Ожидаемый результат - обновляет аккаунт по id параметрами, переданными в BODY.
  ```
  ```
+
    REQUEST - /account/search?{name}&{startDate}&{endDate}
    METHOD - GET
    BODY -
@@ -44,6 +49,7 @@
    Все аргументы опциональные.Если не один не задан - выдача всех аккаунтов.
  ```
  * Пример сущности account:
+
  ```
    {
      "id": 1,
