@@ -9,9 +9,9 @@ http://java.sun.com/xml/ns/persistence "
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!--Наши ентити-классы-->
-        <class>mytask.domain.Client</class>
-        <class>mytask.domain.Payment</class>
-        <class>mytask.domain.Schet</class>
+        <class>mytask.Domain.Client</class>
+        <class>mytask.Domain.Payment</class>
+        <class>mytask.Domain.Schet</class>
 
         <!--Проперки, которые используются провайдером.-->
         <!--В данном случае указываем Hibernate коннекшн к базе-->

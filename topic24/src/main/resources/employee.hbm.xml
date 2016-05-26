@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.courses.spalah.domain.Employee" table="employee">
+    <class name="com.courses.spalah.Domain.Employee" table="employee">
         <id name="id" column="id" type="long">
             <generator class="identity"></generator>
         </id>
