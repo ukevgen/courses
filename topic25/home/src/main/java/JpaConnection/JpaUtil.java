@@ -20,7 +20,7 @@ public class JpaUtil {
         }
     }
 
-    public static EntityManagerFactory getSessionFactory() {
+    public static EntityManagerFactory getEntityManager() {
         return entityManager;
     }
 }

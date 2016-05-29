@@ -17,7 +17,7 @@ public class BankDaoImp implements BankDao {
         List clients = null;
 
         try {
-            entityManager = JpaUtil.getSessionFactory().createEntityManager();
+            entityManager = JpaUtil.getEntityManager().createEntityManager();
             entityManager.getTransaction().begin();
             clients = entityManager.createQuery("from Client", Client.class).getResultList();
             System.out.println("al is good");
@@ -32,7 +32,7 @@ public class BankDaoImp implements BankDao {
     public void test() {
         EntityManager entityManager = null;
         try {
-            entityManager = JpaUtil.getSessionFactory().createEntityManager();
+            entityManager = JpaUtil.getEntityManager().createEntityManager();
 
             System.out.println("al is good");
         } catch (Exception ex) {

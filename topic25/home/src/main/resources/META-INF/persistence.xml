@@ -1,0 +1,25 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd
+http://java.sun.com/xml/ns/persistence "
+             version="2.0">
+    <!--Уникальное имя для нашего persistence unita-->
+    <persistence-unit name="MYTASK">
+        <!--Указываем JPA провайдар. Hibernate в нашем случае-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--Наши ентити-классы-->
+        <class>mytask.Domain.Client</class>
+        <class>mytask.Domain.Payment</class>
+        <class>mytask.Domain.Schet</class>
+
+        <!--Проперки, которые используются провайдером.-->
+        <!--В данном случае указываем Hibernate коннекшн к базе-->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/person"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
