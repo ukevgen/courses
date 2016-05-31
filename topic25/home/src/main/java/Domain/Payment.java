@@ -64,7 +64,7 @@ public class Payment {
                 "id=" + id +
                 ", numberOfPayment=" + numberOfPayment +
                 ", balance=" + balance +
-                ", client=" + client +
+
                 '}';
     }
 }
